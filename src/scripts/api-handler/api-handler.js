@@ -7,23 +7,23 @@ function getData(inputData){
  .then( data => data.json())
 }
 
-function  postData(selectData, id){
-    return fetch(`http://localhost:8088/${selectData}/${id}`, {
+function  postData(selectData, data){
+    return fetch(`http://localhost:8088/${selectData}`, {
     method:"POST",
     headers: {
         "Content-Type": "application/json"
     },
-    body: JSON.stringify(selectData)
+    body: JSON.stringify(data)
     })
 }
 
-function putData(newData, id){
-    return fetch(`http://localhost:8088/${newData}/${id}`, {
+function putData(newData, data){
+    return fetch(`http://localhost:8088/${newData}`, {
     method:"PUT",
     headers: {
         "Content-Type": "application/json"
     },
-    body: JSON.stringify(newData)
+    body: JSON.stringify(data)
     })
 }
 
