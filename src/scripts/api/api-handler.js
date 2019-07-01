@@ -35,3 +35,5 @@ function deleteData(removeData, id){
         }
     })
 }
+
+export {getData, postData, putData, deleteData}
