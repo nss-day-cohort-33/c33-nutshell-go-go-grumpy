@@ -1,90 +1,21 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "bob",
-      "password": "123ab",
-      "email": "bob@mail.com"
-    },
-    {
       "id": 2,
       "name": "susie",
       "password": "321ba",
       "email": "sue@mail.com"
-    }
-  ],
-  "articles": [
-    {
-      "id": 1,
-      "userId": "",
-      "title": "news of the world",
-      "summary": "hello world",
-      "URL": ""
     },
     {
-      "id": 1,
-      "userId": "",
-      "title": "it's all over now",
-      "summary": "good bye world",
-      "URL": ""
+      "id": 3,
+      "name": "blue",
+      "password": "password",
+      "email": "blueballz@email.com"
     }
   ],
-    "events": [
-      {
-        "id": 1,
-        "userId": "",
-        "name": "big fun",
-        "location": "the park",
-        "date": "7/1/2019"
-      },
-      {
-        "id": 2,
-        "userId": "",
-        "name": "little fun",
-        "location": "the street",
-        "date": "7/1/2019"
-      }
-    ],
-    "chats": [
-      {
-        "id": 1,
-        "userId": "",
-        "message": "hello world",
-        "time": ""
-      },
-      {
-        "id": 2,
-        "userId": "",
-        "message": "",
-        "time": ""
-    }
-    ],
-    "tasks": [
-      {
-        "id": 1,
-        "userId": "",
-        "name": "",
-        "complete": "",
-        "date": ""
-      },
-      {
-        "id": 2,
-        "userId": "",
-        "name": "",
-        "complete": "",
-        "date": ""
-      }
-    ],
-    "friends": [
-      {
-        "id": 1,
-        "userId": "",
-        "friend_user_id": ""
-      },
-      {
-        "id": 2,
-        "userId": "",
-        "friend_user_id": ""
-      }
-    ]
-    }
+  "articles": [],
+  "events": [],
+  "chats": [],
+  "tasks": [],
+  "friends": []
+}
