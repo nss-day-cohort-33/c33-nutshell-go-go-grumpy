@@ -11,6 +11,21 @@
       "name": "blue",
       "password": "password",
       "email": "blueballz@email.com"
+    },
+    {
+      "id": 4
+    },
+    {
+      "name": "name",
+      "email": "email",
+      "password": "password",
+      "id": 5
+    },
+    {
+      "name": "Ween",
+      "email": "Ween@Deen.com",
+      "password": "WeenDeen",
+      "id": 6
     }
   ],
   "articles": [],
