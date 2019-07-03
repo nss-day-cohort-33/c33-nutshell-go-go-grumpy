@@ -1,8 +1,12 @@
 
-import { getData } from "./api-handler"
+import { getData, postData } from "./api-handler"
 
 function getChatData() {
   return getData("chats")
 }
 
-export { getChatData }
+function postChatData(placeholder) {
+  return postData("chats", placeholder)
+}
+
+export { getChatData, postChatData }
