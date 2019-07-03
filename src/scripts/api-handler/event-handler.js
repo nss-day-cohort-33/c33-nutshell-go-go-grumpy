@@ -1,7 +1,9 @@
-import {getData} from "./api-handler"
+import {getData, postData} from "./api-handler"
 
 function getEventsData (){
  return getData("events")
 }
-
-export{getEventsData}
+function postEventsData (placeholder){
+    return postData("events", placeholder)
+   }
+export{getEventsData, postEventsData}

@@ -14,7 +14,14 @@
     }
   ],
   "articles": [],
-  "events": [],
+  "events": [
+    {
+      "name": "hello",
+      "location": "2019-07-03",
+      "date": "nashville",
+      "id": 1
+    }
+  ],
   "chats": [],
   "tasks": [],
   "friends": []
