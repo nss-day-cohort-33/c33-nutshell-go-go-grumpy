@@ -13,9 +13,80 @@
       "email": "blueballz@email.com"
     }
   ],
+  "tasks": [
+    {
+      "newTaskEntry": "school",
+      "date": "2019-07-03",
+      "id": 1
+    },
+    {
+      "newTaskEntry": "q",
+      "date": "2019-07-03",
+      "id": 2
+    },
+    {
+      "newTaskEntry": "a",
+      "date": "",
+      "id": 3
+    },
+    {
+      "newTaskEntry": "a",
+      "date": "",
+      "id": 4
+    },
+    {
+      "newTaskEntry": "a",
+      "date": "",
+      "id": 5
+    },
+    {
+      "newTaskEntry": "a",
+      "date": "",
+      "id": 6
+    },
+    {
+      "newTaskEntry": "s",
+      "date": "",
+      "id": 7
+    },
+    {
+      "newTaskEntry": "a",
+      "date": "",
+      "id": 8
+    },
+    {
+      "newTaskEntry": "a",
+      "date": "",
+      "id": 9
+    },
+    {
+      "newTaskEntry": "a",
+      "date": "",
+      "id": 10
+    },
+    {
+      "newTaskEntry": "d",
+      "date": "2019-07-09",
+      "id": 11
+    },
+    {
+      "newTaskEntry": "a",
+      "date": "",
+      "id": 12
+    },
+    {
+      "newTaskEntry": "a",
+      "date": "2019-07-03",
+      "id": 13
+    },
+    {
+      "newTaskEntry": "d",
+      "date": "2019-07-09",
+      "id": 14
+    }
+  ],
   "articles": [],
   "events": [],
   "chats": [],
-  "tasks": [],
   "friends": []
 }
