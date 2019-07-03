@@ -83,6 +83,31 @@
       "newTaskEntry": "d",
       "date": "2019-07-09",
       "id": 14
+    },
+    {
+      "newTaskEntry": "School",
+      "date": "2019-07-04",
+      "id": 15
+    },
+    {
+      "newTaskEntry": "school",
+      "date": "2019-07-03",
+      "id": 16
+    },
+    {
+      "newTaskEntry": "sc",
+      "date": "",
+      "id": 17
+    },
+    {
+      "newTaskEntry": "school",
+      "date": "",
+      "id": 18
+    },
+    {
+      "newTaskEntry": "Shovel",
+      "date": "2019-07-03",
+      "id": 19
     }
   ],
   "articles": [],

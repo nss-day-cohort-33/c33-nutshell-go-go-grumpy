@@ -1,10 +1,11 @@
 import { getTaskData, putTaskData, postTaskData } from "../api-handler/task-handler";
 
 
+
 function createTaskList() {
  let formTaskList = document.querySelector("#container")
-  formTaskList.innerHTML =
-        `<fieldset >
+  formTaskList.innerHTML =`
+    <fieldset >
         <label for="nameOfTask">Task Name</label>
         <input type="text" name="nameOfTask" id="nameOfTask" required>
     </fieldset>

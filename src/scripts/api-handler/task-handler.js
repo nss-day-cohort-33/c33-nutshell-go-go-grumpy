@@ -13,5 +13,9 @@ function postTaskData(placeholder) {
   return postData("tasks", placeholder)
 }
 
+function deleteTaskData(placeholder) {
+  return deleteData("tasks", placeholder)
+}
 
-export { getTaskData , putTaskData, postTaskData };
+
+export { getTaskData , putTaskData, postTaskData, deleteTaskData };
