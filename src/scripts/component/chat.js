@@ -8,16 +8,19 @@ function eventListener() {
     let newChat = chatFactory(chatEntry)
     // postNewChat(newChat)
     postChatData(newChat)
-    console.log(newChat)
+    getChatData()
+    .then (chatData => listChats(chatData))
   })
 }
 
-// const listChats = (newChat) => {
-//   let selectDOM = document.querySelector("#container");
-//   newChat.forEach(entry => {
-//     selectDOM.appendChild(createChatForm(entry));
-//   })
-// }
+const listChats = (chatData) => {
+  let chatsDisplay = document.querySelector("#chat-display")
+  chatsDisplay.innerHTML = ""
+  chatData.forEach(chat => {
+  chatsDisplay.appendChild(createChatDisplay(chat))
+})
+}
+
 
 function chatFactory(entry) {
   return {
@@ -28,6 +31,7 @@ function chatFactory(entry) {
 function createChatForm() {
   let selectDOM = document.querySelector("#container");
   selectDOM.innerHTML = ` 
+    <div id="chat-display"></div>
     <input type="hidden" id="chat-id">
     <textarea id="chat-entry"></textarea>
     <button id="chat-send">send chat</button>
@@ -36,8 +40,23 @@ function createChatForm() {
 }
 
 
-getChatData()
-// .then (chatData => listChats(chatData))
+function createChatDisplay(chats){
+  let el = document.createElement("div");
+  let div = document.createElement("div");
+  let section = document.createElement("section");
+  let deleteBtn = document.createElement("button");
+  let editBtn = document.createElement("button");
+  section.innerHTML = `
+  <section id="${chats.id}">
+    <article>
+      <p>${chats.entry}</p>
+    </article>
+  </section>`
+el.appendChild(section)
+deleteBtn.setAttribute("id", `deleteBtn-${chats.id}`)
+el.appendChild(div)
+return el
+}
 
 
 export { createChatForm }
