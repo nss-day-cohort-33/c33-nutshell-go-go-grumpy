@@ -6,7 +6,6 @@ function eventListener() {
   document.querySelector("#chat-send").addEventListener("click", function () {
     let chatEntry = document.querySelector("#chat-entry").value
     let newChat = chatFactory(chatEntry)
-    // postNewChat(newChat)
     postChatData(newChat)
     getChatData()
     .then (chatData => listChats(chatData))
