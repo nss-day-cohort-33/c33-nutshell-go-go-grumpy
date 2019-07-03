@@ -6,4 +6,5 @@ function getEventsData (){
 function postEventsData (placeholder){
     return postData("events", placeholder)
    }
+
 export{getEventsData, postEventsData}
