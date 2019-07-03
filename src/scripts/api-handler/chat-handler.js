@@ -1,5 +1,8 @@
 
-function getChatData (){
-    return getData("chat")
-   }
-   export{getChatData}
+import { getData } from "./api-handler"
+
+function getChatData() {
+  return getData("chats")
+}
+
+export { getChatData }

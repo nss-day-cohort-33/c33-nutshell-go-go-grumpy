@@ -15,7 +15,12 @@
   ],
   "articles": [],
   "events": [],
-  "chats": [],
+  "chats": [
+    {
+      "id": 1,
+      "entry": "poop"
+    }
+  ],
   "tasks": [],
   "friends": []
 }
