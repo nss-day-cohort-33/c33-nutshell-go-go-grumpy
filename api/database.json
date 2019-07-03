@@ -16,28 +16,10 @@
   "articles": [],
   "events": [
     {
-      "name": "hello",
-      "location": "2019-07-03",
-      "date": "nashville",
-      "id": 1
-    },
-    {
-      "name": "",
-      "location": "",
-      "date": "",
-      "id": 2
-    },
-    {
       "name": "hi",
       "location": "2019-07-24",
       "date": "House",
       "id": 3
-    },
-    {
-      "name": "hi",
-      "location": "2019-07-24",
-      "date": "House",
-      "id": 4
     }
   ],
   "chats": [],
