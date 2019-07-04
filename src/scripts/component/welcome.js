@@ -1,8 +1,11 @@
-import {createFormComponent, createRegistrationForm, createUserFactory } from "./form.js"
+// Curt
+
+import {createLoginFormComponent, createRegistrationForm, createUserFactory } from "./form.js"
 import { postUsertoDB } from "../api-handler/form-handler.js";
 
 let welcomeContainer = document.querySelector("#container")
 
+//Event listener to save registration to DB
 function registerEvent() {
     document.querySelector("#saveUserBtn").addEventListener("click", () => {
     // console.log("register")
@@ -15,9 +18,11 @@ function registerEvent() {
     let newUserData = createUserFactory(createUser, createEmail, createPassword)
     console.log(newUserData)
     postUsertoDB(newUserData)
+    createLoginFormComponent()
 })
 }
 
+//Function to create the initial welcome page
 function createWelcomePage () {
     welcomeContainer.innerHTML = `
     <h1 class="welcomeh1">Welcome to Nuthouse<h1>
@@ -27,7 +32,7 @@ function createWelcomePage () {
     `
     document.querySelector("#loginBtn").addEventListener("click", () => {
         // console.log("work")
-        createFormComponent()
+        createLoginFormComponent()
     })
     document.querySelector("#registerBtn").addEventListener("click", () => {
         // console.log("register")
@@ -35,6 +40,7 @@ function createWelcomePage () {
         registerEvent()
     })
 }
+
 
 
 export { createWelcomePage }

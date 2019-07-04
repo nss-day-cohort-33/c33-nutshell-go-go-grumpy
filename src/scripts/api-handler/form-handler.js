@@ -1,4 +1,4 @@
-// Mark
+// Mark, Curt
 import { getData, postData } from "./api-handler.js"
 
 function postUsertoDB(placeholder) {

@@ -26,9 +26,28 @@
       "email": "Ween@Deen.com",
       "password": "WeenDeen",
       "id": 6
+    },
+    {
+      "name": "mark",
+      "email": "mark@gmail.com",
+      "password": "markymark",
+      "id": 7
+    },
+    {
+      "name": "mathew",
+      "email": "mathew@email.com",
+      "password": "mathew",
+      "id": 8
     }
   ],
-  "articles": [],
+  "articles": [
+    {
+      "name": "supercool",
+      "summary": "waycool",
+      "url": "superwaycool.com",
+      "id": 1
+    }
+  ],
   "events": [],
   "chats": [],
   "tasks": [],

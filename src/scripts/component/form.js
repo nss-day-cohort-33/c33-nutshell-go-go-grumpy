@@ -1,8 +1,9 @@
-//Curt
-// import {formData} from "./api-handler/form-handler.js"
+// Curt
 
+import { populateHomepage } from "./homepage.js"
 
-function createFormComponent () {
+//function to create the log in form
+function createLoginFormComponent () {
     let formContainer = document.querySelector("#container")
     formContainer.innerHTML = `
     <h1>Welcome User. Please input your login information</h2>
@@ -10,8 +11,10 @@ function createFormComponent () {
     <input id="userPassword" name="userEditor" type="text" placeholder="Password">
     <button id="loginBtn">Login</button>
     `
+    loginEvent()
 }
 
+//function to create the registration form
 function createRegistrationForm() {
     let formContainer = document.querySelector("#container")
     formContainer.innerHTML = `
@@ -23,6 +26,7 @@ function createRegistrationForm() {
     `
 }
 
+//factory function to format data into DB
 function createUserFactory (name, email, password) {
     return {
     name: name,
@@ -31,4 +35,31 @@ function createUserFactory (name, email, password) {
     }
 }
 
-export { createFormComponent, createRegistrationForm, createUserFactory}
+//Event listener for user login
+function loginEvent() {
+    document.querySelector("#loginBtn").addEventListener("click", () => {
+        let userName = document.querySelector("#userName").value
+        let userPassword = document.querySelector("#userPassword").value
+    //Querying through the DB to check if the input of "userName" matches a name in the DB
+        fetch(`http://localhost:8088/users?name=${userName}`)
+    //Converting json data to javascript
+        .then( data => data.json())
+    //About to do something with the array pulled from DB
+        .then ( user => {
+    //Console log the array
+            console.log(user)
+    //Check if there was a name in the array and check if the userpassword matches the DB
+            if (user.length > 0 && user[0].password === userPassword) {
+                console.log("you are registered")
+                sessionStorage.setItem(name, user[0].id)
+    //Call function to load homepage
+                populateHomepage()
+    //Do something else if the name and password don't exist
+            } else {
+                alert("Improper credentials submitted. Pleaase try again.")
+            }
+        })
+    })
+}
+
+export { createLoginFormComponent, createRegistrationForm, createUserFactory}
