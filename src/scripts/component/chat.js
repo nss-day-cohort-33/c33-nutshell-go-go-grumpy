@@ -5,11 +5,14 @@ function eventListener() {
   document.querySelector("#chat-send").addEventListener("click", function () {
     let chatEntry = document.querySelector("#chat-entry").value
     let newChat = chatFactory(chatEntry)
-    postChatData(newChat)
-    getChatData()
-    .then (chatData => listChats(chatData))
-  })
-}
+    postChatData(newChat).then(() => {
+      getChatData()
+        .then (chatData => listChats(chatData))
+
+      })
+
+    }
+  )}
 
 const listChats = (chatData) => {
   let chatsDisplay = document.querySelector("#chat-display")
