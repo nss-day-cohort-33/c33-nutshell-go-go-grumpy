@@ -14,20 +14,7 @@
     }
   ],
   "articles": [],
-  "events": [
-    {
-      "name": "kmmk",
-      "location": "2019-07-10",
-      "date": "kmlmk",
-      "id": 14
-    },
-    {
-      "name": "gewa",
-      "location": "2019-07-03",
-      "date": "gewa",
-      "id": 15
-    }
-  ],
+  "events": [],
   "chats": [],
   "tasks": [],
   "friends": []

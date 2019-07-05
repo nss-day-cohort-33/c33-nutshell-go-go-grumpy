@@ -1,7 +1,25 @@
 import { postEventsData, getEventsData, deleteEvent, putEvent} from "../api-handler/event-handler.js";
 
+let eventDisplay = document.querySelector("#displayEvents")
 
-// let eventDisplay = document.querySelector("#displayEvents")
+function addEditFormDOM (editContainer, editForm){
+    document.querySelector(`#${editContainer}`).innerHTML = editForm;
+    document.querySelector("#editSaveBtn").addEventListener("click", () => {
+    let eventName = document.querySelector("#editNameOfEvent").value
+    let eventDate = document.querySelector("#editEventDate").value
+    let eventLocation = document.querySelector("#editLocationOfEvent").value
+    let eventID = document.querySelector("#event-id").value
+    let updateEvent = eventFactory(eventName, eventLocation, eventDate)
+        updateEvent.id = eventID
+    putEvent(updateEvent)
+    .then(() => {
+        eventDisplay.innerHTML = ""
+        getEventsData()
+        .then (taco => listEvents(taco))
+    })
+})
+}
+
 // Updates the display so that the current data from json
 function createEventFrom() {
     getEventsData()
@@ -33,8 +51,8 @@ function createEventFrom() {
 function eventFactory(name, location, date) {
     return {
         name: name,
-        location: location,
-        date: date
+        date: date,
+        location: location
     }
 }
 
@@ -46,10 +64,10 @@ function eventListener() {
         let nameEventValue = document.querySelector("#nameOfEvent").value
         let dateEventValue = document.querySelector("#eventDate").value
         let locationEventValue = document.querySelector("#locationOfEvent").value
-        let newEvent = eventFactory(nameEventValue, dateEventValue, locationEventValue)
+        let newEvent = eventFactory(nameEventValue, locationEventValue, dateEventValue)
         postEventsData(newEvent)
-        .then(()=>{
-        getEventsData()
+        .then((event)=>{
+        getEventsData(event)
             .then(events =>
                 listEvents(events)
             )
@@ -98,7 +116,7 @@ function createEvent(events) {
     editBtn.textContent = "edit"
     editBtn.addEventListener("click", ()=> {
         console.log("edit button")
-        let editForm = createEventEditForm(event)
+        let editForm = createEventEditForm(events)
         addEditFormDOM(div.id, editForm)
 
     })
@@ -109,22 +127,25 @@ function createEvent(events) {
     return el
 }
 
-function createEventEditForm (){
+function createEventEditForm (events){
     return `
+
     <fieldset >
     <label for="NameOfEvent">Event Name</label>
-    <input type="text" name="NameOfEvent" id="editNameOfEvent">
-    <input type="hidden" id="event-id" value=${event.id}>
+    <input type="text" name="NameOfEvent" id="editNameOfEvent" value=${events.name}>
+    <input type="hidden" id="event-id" value=${events.id}>
 </fieldset>
 <fieldset>
     <label for="eventDate">Event Date</label>
-    <input type="date" name="EventDate" id="editEventDate" >
+    <input type="date" name="EventDate" id="editEventDate" value=${events.eventDate}>
 </fieldset>
 <fieldset>
     <label for="locationOfEvent">Location of Event:</label>
-    <input type="text" name="locationOfEvent" id="editLocationOfEvent">
+    <input type="text" name="locationOfEvent" id="editLocationOfEvent" value= ${events.location}>
 </fieldset>
+
 <button id= "editSaveBtn" type="button">Save Event</button>`
+
 }
 
 
@@ -137,21 +158,6 @@ const listEvents = (eventArr) => {
     })
 }
 
-function addEditFormDOM (editContainer, editForm){
-    document.querySelector(`#${editContainer}`).innerHTML = editForm;
-    let eventName = document.querySelector("#editNameOfEvent").value
-    let eventDate = document.querySelector("#editEventDate").value
-    let eventLocation = document.querySelector("#editLocationOfEvent").value
-    let eventID = document.querySelector("#event-id").value
-    let updateEvent = eventFactory(eventName, eventDate, eventLocation)
-    updateEvent.id = eventID
-    putEvent(updateEvent)
-    .then(() => {
-        eventDisplay.innerHTML = ""
-        getEventsData()
-        .then (event => listEvents(event))
-    })
-}
 
 
 
