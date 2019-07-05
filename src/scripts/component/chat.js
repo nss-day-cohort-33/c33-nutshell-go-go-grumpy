@@ -5,20 +5,19 @@ function eventListener() {
   document.querySelector("#chat-send").addEventListener("click", function () {
     let chatEntry = document.querySelector("#chat-entry").value
     let newChat = chatFactory(chatEntry)
-    postChatData(newChat).then(() => {
+    postChatData(newChat)
+    .then(() => {
       getChatData()
         .then (chatData => listChats(chatData))
-
       })
-
     }
   )}
 
-const listChats = (chatData) => {
+let listChats = (chatData) => {
   let chatsDisplay = document.querySelector("#chat-display")
   chatsDisplay.innerHTML = ""
-  chatData.forEach(chat => {
-    chatsDisplay.appendChild(createChatDisplay(chat))
+  chatData.forEach(poop => {
+    chatsDisplay.appendChild(createChatDisplay(poop))
   })
 }
 
@@ -40,6 +39,7 @@ function createChatForm() {
 }
 
 function createChatDisplay(chats){
+  let chatsDisplay = document.querySelector("#chat-display")
   let el = document.createElement("div");
   let div = document.createElement("div");
   let section = document.createElement("section");
@@ -52,21 +52,22 @@ function createChatDisplay(chats){
     </article>
   </section>`
   el.appendChild(section)
+  el.appendChild(div)
   div.setAttribute("id", `eventContainer-${chats.id}`)
   deleteBtn.setAttribute("id", `${chats.id}`)
   deleteBtn.textContent = "delete"
   deleteBtn.addEventListener("click", () => {
-    let id = chat.target.id
+    console.log("delete clicked")
+    let id = event.target.id
     deleteChat(id)
       .then(data => {
-        chatDisplay.innerHTML = ""
+        chatsDisplay.innerHTML = ""
         getChatData()
           .then(chats =>
             listChats(chats)
           )
       })
   })
-  el.appendChild(div)
   el.appendChild(deleteBtn)
   return el
 }
