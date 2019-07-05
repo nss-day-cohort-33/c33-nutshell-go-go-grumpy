@@ -68,12 +68,18 @@ function displayNewsArticles(articles) {
             <p>${articles.url}</p>
         </article>
         </section>
+        <div id="editField"></div>
     `;
   el.appendChild(section);
   div.setAttribute("id", `newsContainer-${articles.id}`);
   deleteBtn.setAttribute("id", `${articles.id}`);
   deleteBtn.textContent = "Delete";
+  editBtn.setAttribute("id", `${articles.id}`)
   editBtn.textContent = "Edit"
+  editBtn.addEventListener("click", () => {
+    console.log("event")
+    createEditForm(articles)
+  })
   deleteBtn.addEventListener("click", () => {
     let id = event.target.id;
     deleteNews(id).then(data => {
@@ -88,6 +94,7 @@ function displayNewsArticles(articles) {
   return el;
 }
 
+
 //get articles from the DB
 const listArticles = articleArr => {
   let articleDisplay = document.querySelector("#displayNews");
@@ -96,5 +103,37 @@ const listArticles = articleArr => {
     articleDisplay.appendChild(displayNewsArticles(article));
   });
 };
+
+//Edit form function
+function createEditForm (article) {
+  let newsContainer = document.querySelector("#editField");
+    newsContainer.innerHTML = `
+    <fieldset>
+    <label for="newsTitle">Article Title</label>
+    <input type="text" name="newsTitle" id="articleTitle" value=${article.name}>
+    </fieldset>
+    <fieldset>
+    <label for="newsSummary">Summary</label>
+    <input type="textfield" name="newsSummary" id="articleSummary" value=${article.summary}>
+    </fieldset>
+    <fieldset>
+    <label for="newsURL">Article URL</label>
+    <input type="text" name="newsURL" id="URL" value=${article.url}>
+    </fieldset>
+    <button id="saveChanges" type="button">Save Changes</button>
+    <div id="displayNews"></div>
+    `
+    let saveEditBtn = document.querySelector("#saveChanges")
+    saveEditBtn.addEventListener("click", () => {
+        console.log("save changes")
+        let editTitle = document.querySelector("#articleTitle").value;
+        let editSummary = document.querySelector("#articleSummary").value;
+        let editURL = document.querySelector("#URL").value;
+        let editedNews = newsFactory(editTitle, editSummary, editURL);
+        putNewsData(editedNews).then(() => {
+            getNewsData().then(articles => listArticles(articles));
+    })
+  })
+}
 
 export { createArticleForm, newsListener };
