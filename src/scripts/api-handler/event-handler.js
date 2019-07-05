@@ -1,4 +1,4 @@
-import {getData, postData, deleteData} from "./api-handler"
+import {getData, postData, deleteData, putData} from "./api-handler"
 
 function getEventsData (){
  return getData("events")
@@ -11,4 +11,8 @@ function deleteEvent (id){
     return deleteData("events", id)
 }
 
-export{getEventsData, postEventsData, deleteEvent}
+function putEvent (data){
+    putData("events", data)
+}
+
+export{getEventsData, postEventsData, deleteEvent, putEvent}

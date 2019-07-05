@@ -17,8 +17,8 @@ function  postData(selectData, data){
     })
 }
 
-function putData(newData, data){
-    return fetch(`http://localhost:8088/${newData}`, {
+function putData(resouce, data){
+    return fetch(`http://localhost:8088/${resouce}/${data.id}`, {
     method:"PUT",
     headers: {
         "Content-Type": "application/json"
