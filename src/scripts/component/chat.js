@@ -1,6 +1,5 @@
 
-import { getChatData, postChatData } from "../api-handler/chat-handler"
-
+import { getChatData, postChatData, deleteChat } from "../api-handler/chat-handler"
 
 function eventListener() {
   document.querySelector("#chat-send").addEventListener("click", function () {
@@ -16,10 +15,9 @@ const listChats = (chatData) => {
   let chatsDisplay = document.querySelector("#chat-display")
   chatsDisplay.innerHTML = ""
   chatData.forEach(chat => {
-  chatsDisplay.appendChild(createChatDisplay(chat))
-})
+    chatsDisplay.appendChild(createChatDisplay(chat))
+  })
 }
-
 
 function chatFactory(entry) {
   return {
@@ -38,24 +36,36 @@ function createChatForm() {
   eventListener()
 }
 
-
 function createChatDisplay(chats){
   let el = document.createElement("div");
   let div = document.createElement("div");
   let section = document.createElement("section");
   let deleteBtn = document.createElement("button");
-  let editBtn = document.createElement("button");
+  // let editBtn = document.createElement("button");
   section.innerHTML = `
   <section id="${chats.id}">
     <article>
       <p>${chats.entry}</p>
     </article>
   </section>`
-el.appendChild(section)
-deleteBtn.setAttribute("id", `deleteBtn-${chats.id}`)
-el.appendChild(div)
-return el
+  el.appendChild(section)
+  div.setAttribute("id", `eventContainer-${chats.id}`)
+  deleteBtn.setAttribute("id", `${chats.id}`)
+  deleteBtn.textContent = "delete"
+  deleteBtn.addEventListener("click", () => {
+    let id = chat.target.id
+    deleteChat(id)
+      .then(data => {
+        chatDisplay.innerHTML = ""
+        getChatData()
+          .then(chats =>
+            listChats(chats)
+          )
+      })
+  })
+  el.appendChild(div)
+  el.appendChild(deleteBtn)
+  return el
 }
-
 
 export { createChatForm }
