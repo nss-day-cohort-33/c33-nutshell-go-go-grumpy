@@ -1,4 +1,4 @@
-import{createEventFrom, eventListener} from "./component/event"
+import{createEventForm, eventListener} from "./component/event"
 
-createEventFrom()
+createEventForm()
 eventListener()

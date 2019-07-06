@@ -14,7 +14,14 @@
     }
   ],
   "articles": [],
-  "events": [],
+  "events": [
+    {
+      "name": "klads",
+      "date": "2019-07-05",
+      "location": "afsdnmk",
+      "id": 1
+    }
+  ],
   "chats": [],
   "tasks": [],
   "friends": []

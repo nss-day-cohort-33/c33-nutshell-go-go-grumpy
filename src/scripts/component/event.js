@@ -8,7 +8,7 @@ function addEditFormDOM (editContainer, editForm){
     let eventName = document.querySelector("#editNameOfEvent").value
     let eventDate = document.querySelector("#editEventDate").value
     let eventLocation = document.querySelector("#editLocationOfEvent").value
-    let eventID = document.querySelector("#event-id").value
+    let eventID = document.querySelector("#event-id")
     let updateEvent = eventFactory(eventName, eventLocation, eventDate)
         updateEvent.id = eventID
     putEvent(updateEvent)
@@ -21,7 +21,7 @@ function addEditFormDOM (editContainer, editForm){
 }
 
 // Updates the display so that the current data from json
-function createEventFrom() {
+function createEventForm() {
     getEventsData()
         .then(events =>
             listEvents(events)
@@ -133,18 +133,23 @@ function createEventEditForm (events){
     <fieldset >
     <label for="NameOfEvent">Event Name</label>
     <input type="text" name="NameOfEvent" id="editNameOfEvent" value=${events.name}>
-    <input type="hidden" id="event-id" value=${events.id}>
+    <input type="hidden" id="editEvent-id" value=${events.id}>
 </fieldset>
 <fieldset>
     <label for="eventDate">Event Date</label>
-    <input type="date" name="EventDate" id="editEventDate" value=${events.eventDate}>
+    <input type="date" name="editEventDate" id="editEventDate" value=${events.eventDate}>
 </fieldset>
 <fieldset>
     <label for="locationOfEvent">Location of Event:</label>
-    <input type="text" name="locationOfEvent" id="editLocationOfEvent" value= ${events.location}>
+    <input type="text" name="editLocationOfEvent" id="editLocationOfEvent" value= ${events.location}>
 </fieldset>
 
 <button id= "editSaveBtn" type="button">Save Event</button>`
+
+// let saveEditBtn = document.querySelector("#editSaveBtn")
+// saveEditBtn.addEventListener ("click", ()=>{
+//     console.log ("save")
+// })
 
 }
 
@@ -161,4 +166,4 @@ const listEvents = (eventArr) => {
 
 
 
-export { createEventFrom, eventListener }
+export { createEventForm, eventListener }
