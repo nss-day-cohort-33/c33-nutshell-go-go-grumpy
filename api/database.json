@@ -42,16 +42,22 @@
   ],
   "articles": [
     {
-      "name": "supercool",
-      "summary": "waycool",
-      "url": "superwaycool.com",
-      "id": 1
+      "name": "cool",
+      "summary": "this is cool",
+      "url": "coolnews@email.com",
+      "id": 3
     },
     {
-      "name": "hjvj",
-      "summary": "jhvj",
-      "url": "hg",
-      "id": 2
+      "name": "dongle spit",
+      "summary": "many things",
+      "url": "dongleipsum@thing.com",
+      "id": 4
+    },
+    {
+      "name": "hi",
+      "summary": "hi",
+      "url": "hi",
+      "id": 5
     }
   ],
   "events": [],

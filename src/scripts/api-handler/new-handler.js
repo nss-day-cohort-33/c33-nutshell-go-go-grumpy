@@ -7,6 +7,12 @@ function getNewsData (){
     return getData("articles")
    }
 
+//    getJournalEntry (id) {
+//     return fetch(`http://localhost:3000/entries/${id}`)
+//     .then(response => response.json()
+//     );
+//   }
+
 function postNewsData (placeholder){
     return postData("articles", placeholder)
 }
@@ -15,8 +21,8 @@ function deleteNews (id) {
     return deleteData("articles", id)
 }
 
-function putNewsData(placeholder) {
-    return putData("articles", placeholder)
+function putNewsData(editedThing, id) {
+    return putData("articles", editedThing, id)
 }
 
    export{ getNewsData, postNewsData, deleteNews, putNewsData }

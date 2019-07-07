@@ -68,7 +68,7 @@ function displayNewsArticles(articles) {
             <p>${articles.url}</p>
         </article>
         </section>
-        <div id="editField"></div>
+        <div id="editField-${articles.id}"></div>
     `;
   el.appendChild(section);
   div.setAttribute("id", `newsContainer-${articles.id}`);
@@ -106,34 +106,60 @@ const listArticles = articleArr => {
 
 //Edit form function
 function createEditForm (article) {
-  let newsContainer = document.querySelector("#editField");
+  let newsContainer = document.querySelector(`#editField-${article.id}`);
     newsContainer.innerHTML = `
     <fieldset>
     <label for="newsTitle">Article Title</label>
-    <input type="text" name="newsTitle" id="articleTitle" value=${article.name}>
+    <input type="text" class="title" name="newsTitle" id="articleTitle" value=${article.name}>
     </fieldset>
     <fieldset>
     <label for="newsSummary">Summary</label>
-    <input type="textfield" name="newsSummary" id="articleSummary" value=${article.summary}>
+    <input type="textfield" class="summary" name="newsSummary" id="articleSummary" value=${article.summary}>
     </fieldset>
     <fieldset>
     <label for="newsURL">Article URL</label>
-    <input type="text" name="newsURL" id="URL" value=${article.url}>
+    <input type="text" class="url" name="newsURL" id="URL" value=${article.url}>
     </fieldset>
-    <button id="saveChanges" type="button">Save Changes</button>
-    <div id="displayNews"></div>
+    <button id="saveChanges-${article.id}" type="button">Save Changes</button>
+    <button id="cancelEdit-${article.id}" type="button">Cancel Changes</button>
+    <div id="displayEditForm"></div>
     `
-    let saveEditBtn = document.querySelector("#saveChanges")
-    saveEditBtn.addEventListener("click", () => {
-        console.log("save changes")
-        let editTitle = document.querySelector("#articleTitle").value;
-        let editSummary = document.querySelector("#articleSummary").value;
-        let editURL = document.querySelector("#URL").value;
-        let editedNews = newsFactory(editTitle, editSummary, editURL);
-        putNewsData(editedNews).then(() => {
-            getNewsData().then(articles => listArticles(articles));
-    })
+function createCancelEditBtn () {
+  let cancelBtn = document.querySelector(`#cancelEdit-${article.id}`)
+  cancelBtn.addEventListener("click", () => {
+    let cancelId = event.target.id.split("-")[1]
+    console.log(cancelId)
+    let clearEditField = document.querySelector(`#editField-${article.id}`)
+    clearEditField.innerHTML = ""
   })
 }
+
+createCancelEditBtn()
+
+createSaveChangesBtn()
+
+function createSaveChangesBtn() {
+    let saveEditBtn = document.querySelector(`#saveChanges-${article.id}`)
+    saveEditBtn.addEventListener("click", () => {
+      let id = event.target.id.split("-")[1]
+      console.log(event)
+      console.log(id)
+      let editTitle = document.querySelector(".title").value;
+      let editSummary = document.querySelector(".summary").value;
+      let editURL = document.querySelector(".url").value;
+      console.log(editTitle)
+      console.log(editSummary)
+      console.log(editURL)
+      let editedNews = newsFactory(editTitle, editSummary, editURL);
+      putNewsData(editedNews, id).then(() => {
+        getNewsData().then(articles => listArticles(articles));
+        console.log("save changes")
+      })
+    })
+  }
+}
+
+
+
 
 export { createArticleForm, newsListener };

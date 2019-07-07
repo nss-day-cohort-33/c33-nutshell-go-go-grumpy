@@ -17,18 +17,40 @@ function  postData(selectData, data){
     })
 }
 
-function putData(resource, id){
+// function updateLego(updatedLego) {
+//     return fetch(`http://localhost:8088/legos/${updatedLego.id}`, {
+//       method: "PUT",
+//       headers: {
+//         "Content-Type": "application/json"
+//       },
+//       body: JSON.stringify(updatedLego)
+//     })
+//   }
+
+// putTask (id, object) {
+//     return fetch (`${url}/tasks/${id}`, {
+//         method: "PUT",
+//         headers: {
+//             "content-type": "application/json"
+//         },
+//         body: JSON.stringify(object)
+//     }).then(r => r.json())
+// },
+
+
+function putData(resource, editedThing, id){
     return fetch(`http://localhost:8088/${resource}/${id}`, {
     method:"PUT",
     headers: {
         "Content-Type": "application/json"
     },
-    body: JSON.stringify(id)
+    body: JSON.stringify(editedThing)
     })
+    .then(res => res.json())
 }
 
-function deleteData(removeData, id){
-    return fetch(`http://localhost:8088/${removeData}/${id}`,{
+function deleteData(resource, id){
+    return fetch(`http://localhost:8088/${resource}/${id}`,{
         method: "DELETE",
         headers:{
             "Content-Type": "application/json"
