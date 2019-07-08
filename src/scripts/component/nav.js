@@ -37,7 +37,6 @@ function createNavBar() {
     chatBtn.addEventListener("click", () => {
         console.log("chats")
         createChatForm()
-        eventListener()
     })
     friendsBtn.addEventListener("click", () => {
         console.log("friends")
