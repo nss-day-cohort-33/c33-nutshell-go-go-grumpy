@@ -2,7 +2,7 @@
 
 import { createEventForm, saveEventListener } from "./event.js"
 import {createArticleForm, newsListener} from "./new.js"
-import { eventListener, createChatForm} from "./chat.js"
+import { createChatForm} from "./chat.js"
 
 
 function createNavBar() {
