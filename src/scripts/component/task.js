@@ -26,6 +26,7 @@ function createTaskList() {
     </div>
     <div id ="displayTaskComplete"><h3 id="completed-tasks">Complete</h3>
     <ul id="completed-tasks-list">
+    <button id= "editBtn" type="button">Edit</button>
       <li id="completed-item"></li>
     </ul>
     <button id= "deleteBtn" type="button">Delete</button>
