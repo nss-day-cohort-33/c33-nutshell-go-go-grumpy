@@ -110,4 +110,4 @@ function addChatFormDOM (chatContainer, chatForm){
 })
 }
 
-export { createChatForm, eventListener }
+export { createChatForm }
