@@ -1,5 +1,3 @@
-
-
 // To handle the different fetch calls
 // Matthew McDevitt and Curt Cato
 function getData(inputData){
@@ -17,36 +15,14 @@ function  postData(selectData, data){
     })
 }
 
-// function updateLego(updatedLego) {
-//     return fetch(`http://localhost:8088/legos/${updatedLego.id}`, {
-//       method: "PUT",
-//       headers: {
-//         "Content-Type": "application/json"
-//       },
-//       body: JSON.stringify(updatedLego)
-//     })
-//   }
-
-// putTask (id, object) {
-//     return fetch (`${url}/tasks/${id}`, {
-//         method: "PUT",
-//         headers: {
-//             "content-type": "application/json"
-//         },
-//         body: JSON.stringify(object)
-//     }).then(r => r.json())
-// },
-
-
-function putData(resource, editedThing, id){
-    return fetch(`http://localhost:8088/${resource}/${id}`, {
+function putData(resource, data){
+    return fetch(`http://localhost:8088/${resource}/${data.id}`, {
     method:"PUT",
     headers: {
         "Content-Type": "application/json"
     },
-    body: JSON.stringify(editedThing)
+    body: JSON.stringify(data)
     })
-    .then(res => res.json())
 }
 
 function deleteData(resource, id){

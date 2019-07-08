@@ -1,3 +1,5 @@
+// Curt
+
 import {
   getNewsData,
   postNewsData,
@@ -5,7 +7,6 @@ import {
   putNewsData
 } from "../api-handler/new-handler";
 
-// Curt
 
 //get data from DB
 function createArticleForm() {
@@ -114,7 +115,7 @@ function createEditForm (article) {
     </fieldset>
     <fieldset>
     <label for="newsSummary">Summary</label>
-    <input type="textfield" class="summary" name="newsSummary" id="articleSummary" value=${article.summary}>
+    <input type="text" class="summary" name="newsSummary" id="articleSummary" value=${article.summary}>
     </fieldset>
     <fieldset>
     <label for="newsURL">Article URL</label>
