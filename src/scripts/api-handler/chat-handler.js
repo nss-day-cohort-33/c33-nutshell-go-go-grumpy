@@ -1,5 +1,3 @@
-import { getData } from "api-handler.js"
-
 import { getData, postData, deleteData, putData } from "./api-handler"
 
 function getChatData() {

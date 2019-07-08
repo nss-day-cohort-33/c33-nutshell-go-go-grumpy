@@ -1,5 +1,3 @@
+import {createWelcomePage} from "./component/welcome.js"
 
-import { createChatForm } from "./component/chat"
-
-createChatForm()
-// eventListener()
+createWelcomePage()
