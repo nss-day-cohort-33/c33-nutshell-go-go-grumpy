@@ -11,8 +11,68 @@
       "name": "blue",
       "password": "password",
       "email": "blueballz@email.com"
+    },
+    {
+      "id": 4
+    },
+    {
+      "name": "name",
+      "email": "email",
+      "password": "password",
+      "id": 5
+    },
+    {
+      "name": "Ween",
+      "email": "Ween@Deen.com",
+      "password": "WeenDeen",
+      "id": 6
+    },
+    {
+      "name": "mark",
+      "email": "mark@gmail.com",
+      "password": "markymark",
+      "id": 7
+    },
+    {
+      "name": "mathew",
+      "email": "mathew@email.com",
+      "password": "mathew",
+      "id": 8
     }
   ],
+  "articles": [
+    {
+      "name": "dongle butt",
+      "summary": "many things",
+      "url": "dongleipsum@thing.com",
+      "id": 4
+    },
+    {
+      "name": "hi hi hi",
+      "summary": "hi hi hi",
+      "url": "hi hi hi",
+      "id": 5
+    },
+    {
+      "name": "hi hi hi",
+      "summary": "bye bye bye",
+      "url": "hibye",
+      "id": 6
+    },
+    {
+      "name": "asdfasd",
+      "summary": "asdfasd",
+      "url": "asdfasdf",
+      "id": 7
+    },
+    {
+      "name": "this this this",
+      "summary": "one two three",
+      "url": "three two one",
+      "id": 8
+    }
+  ],
+<<<<<<< HEAD
   "articles": [],
   "events": [
     {
@@ -22,6 +82,9 @@
       "id": 3
     }
   ],
+=======
+  "events": [],
+>>>>>>> origin
   "chats": [],
   "tasks": [],
   "friends": []

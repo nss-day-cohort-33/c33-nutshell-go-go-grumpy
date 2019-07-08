@@ -1,5 +1,3 @@
-
-
 // To handle the different fetch calls
 // Matthew McDevitt and Curt Cato
 function getData(inputData){
@@ -28,8 +26,8 @@ function putData(resource, data){
 
 }
 
-function deleteData(removeData, id){
-    return fetch(`http://localhost:8088/${removeData}/${id}`,{
+function deleteData(resource, id){
+    return fetch(`http://localhost:8088/${resource}/${id}`,{
         method: "DELETE",
         headers:{
             "Content-Type": "application/json"
