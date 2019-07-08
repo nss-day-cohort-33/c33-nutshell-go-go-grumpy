@@ -1,10 +1,15 @@
-// Mark
-import { getData } from "../api-handler/api-handler.js"
+// Mark, Curt
+
+import { getData, postData } from "./api-handler.js"
+
+function postUsertoDB(placeholder) {
+  return postData("users", placeholder)
+}
 
 function formData() {
   return getData("users")
 }
 
 
-export { formData }
+export { formData, postUsertoDB }
 
