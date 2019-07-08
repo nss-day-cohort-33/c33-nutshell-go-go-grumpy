@@ -23,6 +23,7 @@ function putData(resource, data){
     },
     body: JSON.stringify(data)
     })
+
 }
 
 function deleteData(resource, id){

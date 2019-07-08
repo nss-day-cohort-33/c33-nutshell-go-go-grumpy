@@ -72,7 +72,19 @@
       "id": 8
     }
   ],
+<<<<<<< HEAD
+  "articles": [],
+  "events": [
+    {
+      "name": "jklwfJJ",
+      "date": "2019-07-11",
+      "location": "AFEKWJ;J",
+      "id": 3
+    }
+  ],
+=======
   "events": [],
+>>>>>>> origin
   "chats": [],
   "tasks": [],
   "friends": []
