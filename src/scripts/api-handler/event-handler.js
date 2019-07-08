@@ -12,7 +12,9 @@ function deleteEvent (id){
 }
 
 function putEvent (data){
-    putData("events", data)
+    console.log(data)
+   return putData("events", data)
+
 }
 
 export{getEventsData, postEventsData, deleteEvent, putEvent}

@@ -2,23 +2,7 @@ import { postEventsData, getEventsData, deleteEvent, putEvent} from "../api-hand
 
 let eventDisplay = document.querySelector("#displayEvents")
 
-function addEditFormDOM (editContainer, editForm){
-    document.querySelector(`#${editContainer}`).innerHTML = editForm;
-    document.querySelector("#editSaveBtn").addEventListener("click", () => {
-    let eventName = document.querySelector("#editNameOfEvent").value
-    let eventDate = document.querySelector("#editEventDate").value
-    let eventLocation = document.querySelector("#editLocationOfEvent").value
-    let eventID = document.querySelector("#event-id")
-    let updateEvent = eventFactory(eventName, eventLocation, eventDate)
-        updateEvent.id = eventID
-    putEvent(updateEvent)
-    .then(() => {
-        eventDisplay.innerHTML = ""
-        getEventsData()
-        .then (taco => listEvents(taco))
-    })
-})
-}
+
 
 // Updates the display so that the current data from json
 function createEventForm() {
@@ -77,7 +61,7 @@ function eventListener() {
 
 //  creates the event items that are posted under the form
 function createEvent(events) {
-    let eventDisplay = document.querySelector("#displayEvents")
+    // let eventDisplay = document.querySelector("#displayEvents")
 
     let el = document.createElement("div");
     let div = document.createElement("div");
@@ -105,8 +89,8 @@ function createEvent(events) {
                 console.log(data)
                 eventDisplay.innerHTML = ""
                 getEventsData()
-                    .then(events =>
-                        listEvents(events)
+                    .then(taco =>
+                        listEvents(taco)
                     )
             })
 
@@ -137,7 +121,7 @@ function createEventEditForm (events){
 </fieldset>
 <fieldset>
     <label for="eventDate">Event Date</label>
-    <input type="date" name="editEventDate" id="editEventDate" value=${events.eventDate}>
+    <input type="text" name="editEventDate" id="editEventDate" value=${events.eventDate}>
 </fieldset>
 <fieldset>
     <label for="locationOfEvent">Location of Event:</label>
@@ -146,10 +130,7 @@ function createEventEditForm (events){
 
 <button id= "editSaveBtn" type="button">Save Event</button>`
 
-// let saveEditBtn = document.querySelector("#editSaveBtn")
-// saveEditBtn.addEventListener ("click", ()=>{
-//     console.log ("save")
-// })
+
 
 }
 
@@ -163,7 +144,24 @@ const listEvents = (eventArr) => {
     })
 }
 
-
+function addEditFormDOM (editContainer, editForm){
+    let eventDisplay = document.querySelector("#displayEvents")
+    document.querySelector(`#${editContainer}`).innerHTML = editForm;
+    document.querySelector("#editSaveBtn").addEventListener("click", () => {
+    let eventName = document.querySelector("#editNameOfEvent").value
+    let eventDate = document.querySelector("#editEventDate").value
+    let eventLocation = document.querySelector("#editLocationOfEvent").value
+    let eventID = document.querySelector("#editEvent-id").value
+    let updateEvent = eventFactory(eventName, eventLocation, eventDate)
+        updateEvent.id = eventID
+    putEvent(updateEvent)
+    .then (() => {
+        eventDisplay.innerHTML = ""
+        getEventsData()
+        .then(newEvent => listEvents(newEvent))
+    })
+})
+}
 
 
 export { createEventForm, eventListener }

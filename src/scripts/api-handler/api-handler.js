@@ -17,14 +17,15 @@ function  postData(selectData, data){
     })
 }
 
-function putData(resource, id){
-    return fetch(`http://localhost:8088/${resource}/${id}`, {
+function putData(resource, data){
+    return fetch(`http://localhost:8088/${resource}/${data.id}`, {
     method:"PUT",
     headers: {
         "Content-Type": "application/json"
     },
-    body: JSON.stringify(id)
+    body: JSON.stringify(data)
     })
+
 }
 
 function deleteData(removeData, id){
