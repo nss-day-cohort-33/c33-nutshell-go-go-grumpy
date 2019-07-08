@@ -1,32 +1,6 @@
 
 import { getChatData, postChatData, deleteChat, putChat } from "../api-handler/chat-handler"
 
-function eventListener() {
-  document.querySelector("#chat-send").addEventListener("click", function () {
-    let chatEntry = document.querySelector("#chat-entry").value
-    let newChat = chatFactory(chatEntry)
-    postChatData(newChat)
-    .then(() => {
-      getChatData()
-        .then (chatData => listChats(chatData))
-      })
-    }
-  )}
-
-let listChats = (chatData) => {
-  let chatsDisplay = document.querySelector("#chat-display")
-  chatsDisplay.innerHTML = ""
-  chatData.forEach(poop => {
-    chatsDisplay.appendChild(createChatDisplay(poop))
-  })
-}
-
-function chatFactory(entry) {
-  return {
-    entry: entry
-  }
-}
-
 function createChatForm() {
   getChatData()
       .then(poop =>
@@ -38,7 +12,25 @@ function createChatForm() {
     <input id="chat-entry" type="text">
     <button id="chat-send">send chat</button>
   `;
-  // eventListener()
+  eventListener()
+}
+
+function chatFactory(entry) {
+  return {
+    entry: entry
+  }
+}
+
+function eventListener() {
+  document.querySelector("#chat-send").addEventListener("click", function () {
+    let chatEntry = document.querySelector("#chat-entry").value
+    let newChat = chatFactory(chatEntry)
+    postChatData(newChat)
+    .then(() => {
+      getChatData()
+        .then (chatData => listChats(chatData))
+    })
+  })
 }
 
 function createChatDisplay(chats){
@@ -87,19 +79,24 @@ function createChatDisplay(chats){
 function createChatEditForm (chats){
   return `
   <fieldset>
-    <input type="hidden" id="chat-edit-id" value=${chats.id}>
     <input type="text" name="chat-edit-entry" id="chat-edit-entry" value= ${chats.entry}>
+    <input type="hidden" id="chat-edit-id" value=${chats.id}>
   </fieldset>
   <button id="editSaveBtn" type="button">Save Chat</button>`
+}
+
+let listChats = (chatData) => {
+  let chatsDisplay = document.querySelector("#chat-display")
+  chatsDisplay.innerHTML = ""
+  chatData.forEach(poop => {
+    chatsDisplay.appendChild(createChatDisplay(poop))
+  })
 }
 
 function addChatFormDOM (chatContainer, chatForm){
   let eventDisplay = document.querySelector("#chat-display")
   document.querySelector(`#${chatContainer}`).innerHTML = chatForm;
   document.querySelector("#editSaveBtn").addEventListener("click", () => {
-  // let eventName = document.querySelector("#editNameOfEvent").value
-  // let eventDate = document.querySelector("#editEventDate").value
-  // let eventLocation = document.querySelector("#editLocationOfEvent").value
   let eventID = document.querySelector("#chat-edit-id").value
   let editInputField = document.querySelector("#chat-edit-entry").value
   let updateChat = chatFactory(editInputField)
@@ -112,6 +109,5 @@ function addChatFormDOM (chatContainer, chatForm){
   })
 })
 }
-
 
 export { createChatForm, eventListener }
