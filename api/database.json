@@ -38,6 +38,18 @@
       "email": "mathew@email.com",
       "password": "mathew",
       "id": 8
+    },
+    {
+      "name": "name",
+      "email": "pass",
+      "password": "pass",
+      "id": 9
+    },
+    {
+      "name": "thing",
+      "email": "thing",
+      "password": "thing",
+      "id": 10
     }
   ],
   "articles": [
@@ -48,43 +60,20 @@
       "id": 4
     },
     {
-      "name": "hi hi hi",
-      "summary": "hi hi hi",
-      "url": "hi hi hi",
-      "id": 5
-    },
-    {
-      "name": "hi hi hi",
-      "summary": "bye bye bye",
-      "url": "hibye",
-      "id": 6
-    },
-    {
-      "name": "asdfasd",
-      "summary": "asdfasd",
-      "url": "asdfasdf",
-      "id": 7
-    },
-    {
       "name": "this this this",
       "summary": "one two three",
       "url": "three two one",
       "id": 8
     }
   ],
-<<<<<<< HEAD
-  "articles": [],
   "events": [
     {
-      "name": "jklwfJJ",
-      "date": "2019-07-11",
+      "name": "jklwfJJasdfasdf",
+      "date": "undefinedasdfasdf",
       "location": "AFEKWJ;J",
       "id": 3
     }
   ],
-=======
-  "events": [],
->>>>>>> origin
   "chats": [],
   "tasks": [],
   "friends": []

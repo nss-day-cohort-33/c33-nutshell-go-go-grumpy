@@ -1,6 +1,7 @@
 // Curt
 
 import { populateHomepage } from "./homepage.js"
+import { createNavBar } from "./nav.js";
 
 //function to create the log in form
 function createLoginFormComponent () {
@@ -51,6 +52,7 @@ function loginEvent() {
     //Check if there was a name in the array and check if the userpassword matches the DB
             if (user.length > 0 && user[0].password === userPassword) {
                 console.log("you are registered")
+                createNavBar()
                 sessionStorage.setItem(name, user[0].id)
     //Call function to load homepage
                 populateHomepage()
