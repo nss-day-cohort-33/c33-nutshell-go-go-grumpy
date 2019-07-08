@@ -1,5 +1,5 @@
 
-import { getChatData, postChatData, deleteChat } from "../api-handler/chat-handler"
+import { getChatData, postChatData, deleteChat, putChat } from "../api-handler/chat-handler"
 
 function eventListener() {
   document.querySelector("#chat-send").addEventListener("click", function () {
@@ -72,21 +72,53 @@ function createChatDisplay(chats){
   editBtn.textContent = "edit"
   editBtn.addEventListener("click", ()=> {
       console.log("edit clicked")
-      let editForm = createEventEditForm(chats)
-      addEditFormDOM(div.id, editForm)
+      let chatForm = createChatEditForm(chats)
+      addChatFormDOM(div.id, chatForm)
 
   })
-
-
-
-
-
-
-
 
   el.appendChild(deleteBtn)
   el.appendChild(editBtn)
   return el
 }
+
+function createChatEditForm (chats){
+  return `
+  <fieldset>
+    <input type="hidden" id="chat-edit-id" value=${chats.id}>
+    <input type="text" name="chat-edit-entry" id="chat-edit-entry" value= ${chats.entry}>
+  </fieldset>
+  <button id="editSaveBtn" type="button">Save Chat</button>`
+
+
+
+}
+
+function addChatFormDOM (chatContainer, chatForm){
+  let chatEntry = document.querySelector("#chat-entry").value
+  let chatsDisplay = document.querySelector("#chat-display")
+  document.querySelector(`#${chatContainer}`).innerHTML = chatForm;
+  document.querySelector("#editSaveBtn").addEventListener("click", () => {
+    let chatID = document.querySelector("#chat-edit-id").value
+    let updateChat = chatFactory(chatEntry)
+      updateChat.id = chatID
+    putChat(updateChat)
+    .then (() => {
+      chatsDisplay.innerHTML = ""
+      getChatData()
+      .then(newChat => listChats(newChat))
+    })
+  })
+}
+
+
+
+
+
+
+
+
+
+
 
 export { createChatForm }

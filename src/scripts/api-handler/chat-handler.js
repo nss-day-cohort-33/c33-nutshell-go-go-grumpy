@@ -1,5 +1,5 @@
 
-import { getData, postData, deleteData } from "./api-handler"
+import { getData, postData, deleteData, putData } from "./api-handler"
 
 function getChatData() {
   return getData("chats")
@@ -13,5 +13,9 @@ function deleteChat (id) {
   return deleteData("chats", id)
 }
 
+function putChat (data){
+ return putData("chats", data)
 
-export { getChatData, postChatData, deleteChat}
+}
+
+export { getChatData, postChatData, deleteChat, putChat}
