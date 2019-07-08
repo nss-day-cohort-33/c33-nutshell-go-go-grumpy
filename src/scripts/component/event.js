@@ -1,6 +1,6 @@
 import { postEventsData, getEventsData, deleteEvent, putEvent} from "../api-handler/event-handler.js";
 
-let eventDisplay = document.querySelector("#displayEvents")
+
 
 
 
@@ -61,8 +61,7 @@ function eventListener() {
 
 //  creates the event items that are posted under the form
 function createEvent(events) {
-    // let eventDisplay = document.querySelector("#displayEvents")
-
+    let eventDisplay = document.querySelector("#displayEvents")
     let el = document.createElement("div");
     let div = document.createElement("div");
     let section = document.createElement("section");
@@ -119,7 +118,7 @@ function createEventEditForm (events){
     <fieldset >
     <label for="NameOfEvent">Event Name</label>
     <input type="text" name="NameOfEvent" id="editNameOfEvent" value=${events.name}>
-    <input type="text" id="editEvent-id" value=${events.id}>
+    <input type="hidden" id="editEvent-id" value=${events.id}>
 </fieldset>
 <fieldset>
     <label for="eventDate">Event Date</label>
