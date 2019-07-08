@@ -1,9 +1,5 @@
 import { postEventsData, getEventsData, deleteEvent, putEvent} from "../api-handler/event-handler.js";
 
-
-
-
-
 // Updates the display so that the current data from json
 function createEventForm() {
     getEventsData()

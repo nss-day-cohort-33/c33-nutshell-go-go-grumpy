@@ -62,6 +62,12 @@
       "email": "thing",
       "password": "thing",
       "id": 12
+    },
+    {
+      "name": "oh",
+      "email": "oh",
+      "password": "oh",
+      "id": 13
     }
   ],
   "articles": [
@@ -95,6 +101,14 @@
     {
       "entry": "two poops",
       "id": 4
+    },
+    {
+      "entry": "yes",
+      "id": 5
+    },
+    {
+      "entry": "yes",
+      "id": 6
     }
   ],
   "tasks": [],

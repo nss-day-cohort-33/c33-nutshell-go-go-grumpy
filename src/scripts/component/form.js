@@ -9,7 +9,7 @@ function createLoginFormComponent () {
     formContainer.innerHTML = `
     <h1>Welcome User. Please input your login information</h2>
     <input id="userName" name="userEditor" type="text" placeholder="Your Name Here">
-    <input id="userPassword" name="userEditor" type="text" placeholder="Password">
+    <input id="userPassword" name="userEditor" type="password" placeholder="Password">
     <button id="loginBtn">Login</button>
     `
     loginEvent()
@@ -22,7 +22,7 @@ function createRegistrationForm() {
     <h1>Welcome User. Please create user ID</h1>
     <input id="createUserName" name="userEditor" type="text" placeholder="Your Name">
     <input id="createUserEmail" name="userEditor" type="text" placeholder="Your Email">
-    <input id="createUserPassword" name="userEditor" type="text" placeholder="Create Password">
+    <input id="createUserPassword" name="userEditor" type="password" placeholder="Create Password">
     <button id="saveUserBtn">Save</button>
     `
 }
@@ -53,7 +53,7 @@ function loginEvent() {
             if (user.length > 0 && user[0].password === userPassword) {
                 console.log("you are registered")
                 createNavBar()
-                sessionStorage.setItem(userId, user[0].id)
+                sessionStorage.setItem(name, user[0].id)
     //Call function to load homepage
                 populateHomepage()
     //Do something else if the name and password don't exist
