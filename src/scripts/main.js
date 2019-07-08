@@ -1,4 +1,5 @@
 
-import { createChatForm } from "./component/chat"
+import { createChatForm, eventListener } from "./component/chat"
 
 createChatForm()
+eventListener()
