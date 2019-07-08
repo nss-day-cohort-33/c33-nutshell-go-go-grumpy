@@ -44,7 +44,7 @@ function createChatDisplay(chats){
   let div = document.createElement("div");
   let section = document.createElement("section");
   let deleteBtn = document.createElement("button");
-  // let editBtn = document.createElement("button");
+  let editBtn = document.createElement("button");
   section.innerHTML = `
   <section id="${chats.id}">
     <article>
@@ -57,18 +57,35 @@ function createChatDisplay(chats){
   deleteBtn.setAttribute("id", `${chats.id}`)
   deleteBtn.textContent = "delete"
   deleteBtn.addEventListener("click", () => {
-    console.log("delete clicked")
     let id = event.target.id
     deleteChat(id)
       .then(data => {
         chatsDisplay.innerHTML = ""
         getChatData()
-          .then(chats =>
-            listChats(chats)
+          .then(poop =>
+            listChats(poop)
           )
       })
   })
+
+  editBtn.setAttribute("id", `editBtn-${chats.id}`)
+  editBtn.textContent = "edit"
+  editBtn.addEventListener("click", ()=> {
+      console.log("edit clicked")
+      let editForm = createEventEditForm(chats)
+      addEditFormDOM(div.id, editForm)
+
+  })
+
+
+
+
+
+
+
+
   el.appendChild(deleteBtn)
+  el.appendChild(editBtn)
   return el
 }
 
