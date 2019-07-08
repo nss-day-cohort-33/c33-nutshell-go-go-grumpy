@@ -72,20 +72,25 @@
       "id": 8
     }
   ],
-<<<<<<< HEAD
-  "articles": [],
-  "events": [
+  "events": [],
+  "chats": [
     {
-      "name": "jklwfJJ",
-      "date": "2019-07-11",
-      "location": "AFEKWJ;J",
+      "id": 1,
+      "entry": "poop"
+    },
+    {
+      "entry": "two poops",
+      "id": 2
+    },
+    {
+      "entry": "three poops",
       "id": 3
+    },
+    {
+      "entry": "two poops",
+      "id": 4
     }
   ],
-=======
-  "events": [],
->>>>>>> origin
-  "chats": [],
   "tasks": [],
   "friends": []
 }
