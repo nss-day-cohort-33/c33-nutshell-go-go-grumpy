@@ -79,7 +79,24 @@
     }
   ],
   "events": [],
-  "chats": [],
+  "chats": [
+    {
+      "id": 1,
+      "entry": "poop"
+    },
+    {
+      "entry": "two poops",
+      "id": 2
+    },
+    {
+      "entry": "three poops",
+      "id": 3
+    },
+    {
+      "entry": "two poops",
+      "id": 4
+    }
+  ],
   "tasks": [],
   "friends": []
 }

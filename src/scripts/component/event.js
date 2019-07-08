@@ -41,7 +41,7 @@ function eventFactory(name, location, date) {
 }
 
 // It controls the save button and gets the value of the input fields
-function eventListener() {
+function saveEventListener() {
     let formContainer = document.querySelector("#container")
     document.querySelector("#saveBtn").addEventListener("click", function () {
         console.log("button")
@@ -163,4 +163,4 @@ function addEditFormDOM (editContainer, editForm){
 }
 
 
-export { createEventForm, eventListener }
+export { createEventForm, saveEventListener }
