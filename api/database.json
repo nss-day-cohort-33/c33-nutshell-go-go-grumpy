@@ -50,6 +50,18 @@
       "email": "thing",
       "password": "thing",
       "id": 10
+    },
+    {
+      "name": "yes",
+      "email": "yes",
+      "password": "yes",
+      "id": 11
+    },
+    {
+      "name": "thing",
+      "email": "thing",
+      "password": "thing",
+      "id": 12
     }
   ],
   "articles": [
@@ -66,14 +78,7 @@
       "id": 8
     }
   ],
-  "events": [
-    {
-      "name": "jklwfJJasdfasdf",
-      "date": "undefinedasdfasdf",
-      "location": "AFEKWJ;J",
-      "id": 3
-    }
-  ],
+  "events": [],
   "chats": [],
   "tasks": [],
   "friends": []

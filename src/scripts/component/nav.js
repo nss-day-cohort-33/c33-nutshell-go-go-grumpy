@@ -12,11 +12,13 @@ function createNavBar() {
     <button id="eventsMod" type="button">View your events</button>
     <button id="tasksMod" type="button">View your tasks</button>
     <button id="chatMod" type="button">View your chats</button>
+    <button id="friendsMod" type="button">View your friends list</button>
     `
     let newsBtn = document.querySelector("#newsMod")
     let eventsBtn = document.querySelector("#eventsMod")
     let tasksBtn = document.querySelector("#tasksMod")
     let chatBtn = document.querySelector("#chatMod")
+    let friendsBtn = document.querySelector("#friendsMod")
     newsBtn.addEventListener("click", () => {
         console.log("news")
         createArticleForm()
@@ -29,9 +31,13 @@ function createNavBar() {
     })
     tasksBtn.addEventListener("click", () => {
         console.log("tasks")
+
     })
     chatBtn.addEventListener("click", () => {
         console.log("chats")
+    })
+    friendsBtn.addEventListener("click", () => {
+        console.log("friends")
     })
 }
 
