@@ -111,13 +111,15 @@ function createEvent(events) {
     return el
 }
 
+
+// creating the Edit form  to input the new data
 function createEventEditForm (events){
     return `
 
     <fieldset >
     <label for="NameOfEvent">Event Name</label>
     <input type="text" name="NameOfEvent" id="editNameOfEvent" value=${events.name}>
-    <input type="hidden" id="editEvent-id" value=${events.id}>
+    <input type="text" id="editEvent-id" value=${events.id}>
 </fieldset>
 <fieldset>
     <label for="eventDate">Event Date</label>
@@ -129,9 +131,6 @@ function createEventEditForm (events){
 </fieldset>
 
 <button id= "editSaveBtn" type="button">Save Event</button>`
-
-
-
 }
 
 
@@ -144,6 +143,7 @@ const listEvents = (eventArr) => {
     })
 }
 
+// will add the edited event to the data base and update the list of events
 function addEditFormDOM (editContainer, editForm){
     let eventDisplay = document.querySelector("#displayEvents")
     document.querySelector(`#${editContainer}`).innerHTML = editForm;
