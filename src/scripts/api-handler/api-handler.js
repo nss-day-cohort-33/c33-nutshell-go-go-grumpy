@@ -1,9 +1,10 @@
 // To handle the different fetch calls
 // Matthew McDevitt and Curt Cato
-function getData(inputData){
- return fetch(`http://localhost:8088/${inputData}`)
+function getData(inputData, currentUser){
+ return fetch(`http://localhost:8088/${inputData}/?currentUser=${currentUser}`)
  .then( data => data.json())
 }
+
 
 function  postData(selectData, data){
     return fetch(`http://localhost:8088/${selectData}`, {

@@ -1,8 +1,10 @@
 import { postEventsData, getEventsData, deleteEvent, putEvent} from "../api-handler/event-handler.js";
 
+
 // Updates the display so that the current data from json
 function createEventForm() {
-    getEventsData()
+    let currentUserId = sessionStorage.getItem(name)
+    getEventsData(currentUserId)
         .then(events =>
             listEvents(events)
         )
@@ -28,11 +30,12 @@ function createEventForm() {
 }
 
 // the factory function that is a template to put the data into json
-function eventFactory(name, location, date) {
+function eventFactory(name, location, date, currentUserId) {
     return {
         name: name,
         date: date,
-        location: location
+        location: location,
+        currentUser: currentUserId
     }
 }
 
@@ -40,14 +43,15 @@ function eventFactory(name, location, date) {
 function saveEventListener() {
     let formContainer = document.querySelector("#container")
     document.querySelector("#saveBtn").addEventListener("click", function () {
+        let current = sessionStorage.getItem(name)
         console.log("button")
         let nameEventValue = document.querySelector("#nameOfEvent").value
         let dateEventValue = document.querySelector("#eventDate").value
         let locationEventValue = document.querySelector("#locationOfEvent").value
-        let newEvent = eventFactory(nameEventValue, locationEventValue, dateEventValue)
+        let newEvent = eventFactory(nameEventValue, locationEventValue, dateEventValue, current)
         postEventsData(newEvent)
-        .then((event)=>{
-        getEventsData(event)
+        .then(()=>{
+        getEventsData(current)
             .then(events =>
                 listEvents(events)
             )
@@ -57,6 +61,7 @@ function saveEventListener() {
 
 //  creates the event items that are posted under the form
 function createEvent(events) {
+    let currentUserId = sessionStorage.getItem(name)
     let eventDisplay = document.querySelector("#displayEvents")
     let el = document.createElement("div");
     let div = document.createElement("div");
@@ -77,13 +82,12 @@ function createEvent(events) {
     deleteBtn.setAttribute("id", `${events.id}`)
     deleteBtn.textContent = "delete"
     deleteBtn.addEventListener("click", () => {
-        console.log("hello")
+
         let id = event.target.id
         deleteEvent(id)
             .then(data => {
-                console.log(data)
                 eventDisplay.innerHTML = ""
-                getEventsData()
+                getEventsData(currentUserId)
                     .then(taco =>
                         listEvents(taco)
                     )
@@ -99,8 +103,6 @@ function createEvent(events) {
         addEditFormDOM(div.id, editForm)
 
     })
-
-
     el.appendChild(deleteBtn)
     el.appendChild(editBtn)
     return el
@@ -140,6 +142,7 @@ const listEvents = (eventArr) => {
 
 // will add the edited event to the data base and update the list of events
 function addEditFormDOM (editContainer, editForm){
+    let currentUserId = sessionStorage.getItem(name)
     let eventDisplay = document.querySelector("#displayEvents")
     document.querySelector(`#${editContainer}`).innerHTML = editForm;
     document.querySelector("#editSaveBtn").addEventListener("click", () => {
@@ -147,12 +150,12 @@ function addEditFormDOM (editContainer, editForm){
     let eventDate = document.querySelector("#editEventDate").value
     let eventLocation = document.querySelector("#editLocationOfEvent").value
     let eventID = document.querySelector("#editEvent-id").value
-    let updateEvent = eventFactory(eventName, eventLocation, eventDate)
+    let updateEvent = eventFactory(eventName, eventLocation, eventDate, x)
         updateEvent.id = eventID
     putEvent(updateEvent)
     .then (() => {
         eventDisplay.innerHTML = ""
-        getEventsData()
+        getEventsData(currentUserId)
         .then(newEvent => listEvents(newEvent))
     })
 })

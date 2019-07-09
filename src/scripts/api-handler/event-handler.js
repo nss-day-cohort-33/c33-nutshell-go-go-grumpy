@@ -1,8 +1,10 @@
 import {getData, postData, deleteData, putData} from "./api-handler"
 
-function getEventsData (){
- return getData("events")
+function getEventsData (currentUser){
+ return getData("events", currentUser)
 }
+
+
 function postEventsData (placeholder){
     return postData("events", placeholder)
    }

@@ -68,6 +68,12 @@
       "email": "oh",
       "password": "oh",
       "id": 13
+    },
+    {
+      "name": "matthew",
+      "email": "mmcdevitt1997@gmail.com",
+      "password": "matthew",
+      "id": 14
     }
   ],
   "articles": [
@@ -84,7 +90,98 @@
       "id": 8
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "name": "hello",
+      "date": "undefined",
+      "location": "klewfj",
+      "id": 3
+    },
+    {
+      "name": "h",
+      "date": "",
+      "location": "",
+      "id": 4
+    },
+    {
+      "name": "goodbye",
+      "date": "undefined",
+      "location": "hello",
+      "id": 14
+    },
+    {
+      "name": "fewijjg",
+      "date": "undefined",
+      "location": "weiof",
+      "id": 15
+    },
+    {
+      "name": "fewijjg",
+      "date": "2019-07-09",
+      "location": "jelwkg",
+      "currentUser": "3",
+      "id": 16
+    },
+    {
+      "name": "helelo",
+      "date": "undefined",
+      "location": "dfklsaj",
+      "id": 17
+    },
+    {
+      "name": "greqjgi",
+      "date": "undefined",
+      "location": "ewf",
+      "id": 19
+    },
+    {
+      "name": "afds",
+      "date": "undefined",
+      "location": "please",
+      "id": 20
+    },
+    {
+      "name": "asdf",
+      "date": "",
+      "location": "sdf",
+      "currentUser": "3",
+      "id": 21
+    },
+    {
+      "name": "hello",
+      "date": "undefined",
+      "location": "ewagrwa",
+      "id": 23
+    },
+    {
+      "name": "boy",
+      "date": "undefined",
+      "location": "ewagrwa",
+      "currentUser": "8",
+      "id": 24
+    },
+    {
+      "name": "girl",
+      "date": "undefined",
+      "location": "ewagrwa",
+      "currentUser": "8",
+      "id": 25
+    },
+    {
+      "name": "afadf",
+      "date": "",
+      "location": "ewagrwa",
+      "currentUser": "8",
+      "id": 26
+    },
+    {
+      "name": "afe",
+      "date": "",
+      "location": "",
+      "currentUser": "8",
+      "id": 27
+    }
+  ],
   "chats": [
     {
       "id": 1,
@@ -101,14 +198,6 @@
     {
       "entry": "two poops",
       "id": 4
-    },
-    {
-      "entry": "yes",
-      "id": 5
-    },
-    {
-      "entry": "yes",
-      "id": 6
     }
   ],
   "tasks": [],
