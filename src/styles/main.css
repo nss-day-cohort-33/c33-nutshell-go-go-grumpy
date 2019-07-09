@@ -1,0 +1,99 @@
+
+body {
+  background-color: #594b42;
+  color: #fff;
+  font-family: 'Laila', serif;
+  margin: 0 auto;
+}
+
+#container {
+  padding: 60px 30px;
+}
+
+#navBar {
+  background-color: #8a5c3b;
+  text-align: center;
+}
+
+button {
+  background-color: rgba(118, 153, 71, .7);
+  border: 1px solid #fff;
+  border-radius: 2px;
+  color: rgba(255, 255, 255, .7);
+  cursor: pointer;
+  font-family: 'Laila', serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  margin: 5px;
+  min-height: 45px;
+  min-width: 180px;
+  padding: 10px 10px;
+  text-transform: uppercase;
+  transition: all 400ms ease;
+}
+button:hover {
+  background-color: rgba(118, 153, 71, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+#navBar button {
+  background-color: transparent;
+  border: none;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+button.btn-edit {
+  background-color: rgba(193, 130, 63, .7);
+}
+button.btn-edit:hover {
+  background-color: rgba(193, 130, 63, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+button.btn-delete {
+  background-color: rgba(175, 70, 70, .7);
+}
+button.btn-delete:hover {
+  background-color: rgba(175, 70, 70, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+.welcomeh1 {
+  font-weight: 300;
+  letter-spacing: 5px;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.welcomeh2 {
+  font-family: 'Laila', serif;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.btn-container {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%
+}
+
+#chat-display {
+  border-bottom: 1px solid #fff;
+  margin: 0 0 40px;
+  padding: 0 0 30px;
+}
+
+textarea {
+  min-width: 180px;
+  min-height: 45px;
+  resize: vertical;
+}

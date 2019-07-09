@@ -1,6 +1,6 @@
 // Curt
 
-function populateHomepage () {
+function populateHomepage() {
     let homepageContainer = document.querySelector("#container")
     homepageContainer.innerHTML = `
     <div id="mainHomepageDiv">

@@ -68,6 +68,18 @@
       "email": "oh",
       "password": "oh",
       "id": 13
+    },
+    {
+      "name": "pooper",
+      "email": "poop@soop.com",
+      "password": "pooper",
+      "id": 14
+    },
+    {
+      "name": "pooper",
+      "email": "poop@soop.com",
+      "password": "pooper",
+      "id": 15
     }
   ],
   "articles": [
@@ -87,8 +99,8 @@
   "events": [],
   "chats": [
     {
-      "id": 1,
-      "entry": "poop"
+      "entry": "one poop",
+      "id": 1
     },
     {
       "entry": "two poops",
@@ -97,18 +109,6 @@
     {
       "entry": "three poops",
       "id": 3
-    },
-    {
-      "entry": "two poops",
-      "id": 4
-    },
-    {
-      "entry": "yes",
-      "id": 5
-    },
-    {
-      "entry": "yes",
-      "id": 6
     }
   ],
   "tasks": [],

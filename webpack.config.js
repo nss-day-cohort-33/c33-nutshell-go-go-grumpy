@@ -4,7 +4,8 @@ const WebpackShellPlugin = require("webpack-shell-plugin");
 module.exports = {
   entry: "./src/scripts/main.js",
   devServer: {
-    writeToDisk: true
+    writeToDisk: true,
+    liveReload: false
   },
   module: {
     rules: [
