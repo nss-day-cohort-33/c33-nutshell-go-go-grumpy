@@ -8,7 +8,7 @@ import {
 function createTaskList() {
   let formTaskList = document.querySelector("#container");
   formTaskList.innerHTML = `
-  <h2>Task List</h2>
+  <h2>Tasks ToDo</h2>
     <fieldset >
         <label for="nameOfTask">Task Name</label>
         <input type="text" name="nameOfTask" id="nameOfTask" required>
@@ -18,32 +18,30 @@ function createTaskList() {
         <input type="date" name="taskDate" id="taskDate" required>
     </fieldset>
     <button id= "saveBtn" type="button">Save</button>
-    <button id= "editBtn" type="button">Edit</button>
-    <div id="displayTaskIncomplete"><h3>Incomplete</h3>
+    <div id="displayTaskIncomplete"><h3>Task List</h3>
     <ul id="incomplete-tasks-list">
-      <li class= "task-checkbox></li>
     </ul>
     </div>
-    <div id ="displayTaskComplete"><h3 id="completed-tasks">Complete</h3>
+    <div id ="displayTaskComplete"><h3 id="completed-tasks"></h3>
     <ul id="completed-tasks-list">
     <button id= "editBtn" type="button">Edit</button>
-      <li id="completed-item"></li>
     </ul>
     <button id= "deleteBtn" type="button">Delete</button>
     </div> `;
+
   // RADIO BUTTON EVENT
   document
     .querySelector("#displayTaskIncomplete")
     .addEventListener("click", () => {
       if (event.target.id.startsWith("#radio")) {
         console.log(event.target.id);
-        let completeTaskId = event.target.id;
-        if (event.target.checked === true) {
-          getTaskData();
-          completeTaskId.then(task => {
-            completeTaskId;
-          });
-        }
+        // let completeTaskId = event.target.id;
+        // if (event.target.checked === true) {
+        //   getTaskData();
+        //   completeTaskId.then(task => {
+        //     completeTaskId;
+        //   });
+        // }
       }
     });
 }
@@ -56,7 +54,7 @@ function buildTaskObj(todo, date, complete) {
     completedTask: complete
   };
 }
-// Attach event listener to the form element
+// ATTACH EVENT LISTENER TO FORM
 function taskListener() {
   let taskContainer = document.querySelector("#container");
   document.querySelector("#saveBtn").addEventListener("click", () => {
@@ -71,8 +69,7 @@ function taskListener() {
     });
   });
 }
-//Create the Task Items that are Posted Under The Form
-
+// CREATES THE TASK ITEMS
 function createTasks(tasks) {
   let el = document.createElement("div");
   let div = document.createElement("div");
@@ -94,9 +91,9 @@ function createTasks(tasks) {
   <button id= "editBtn" type="button">Edit</button>
     </div>
     `;
-  // const checkBox=taskListItem.querySelector("input[type=checkbox]")
   el.appendChild(section);
   div.setAttribute("id", `taskContainer-${tasks.id}`);
+
   // DELETE BUTTON CONTROL
   deleteBtn.setAttribute("id", `${tasks.id}`);
   deleteBtn.textContent = "delete";
@@ -113,18 +110,50 @@ function createTasks(tasks) {
   el.appendChild(deleteBtn);
   return el;
 }
+function createTaskEditForm(task) {
+  let taskContainer = document.querySelector(`#editField-${task.id}`);
+  taskContainer.innerHTML = `
+  <h2>Task List</h2>
+    <fieldset >
+        <label for="nameOfTask">Task Name</label>
+        <input type="text" name="nameOfTask" id="nameOfTask" required>
+    </fieldset>
+    <fieldset>
+        <label for="taskDate">Task Date</label>
+        <input type="date" name="taskDate" id="taskDate" required>
+    </fieldset>
+    <button id= "saveBtn" type="button">Save</button>
+    <div id="displayTaskIncomplete"><h3>Incomplete</h3>
+    <ul id="incomplete-tasks-list">
+      <li class= "task-checkbox></li>
+    </ul>
+    </div>
+    <div id ="displayTaskComplete"><h3 id="completed-tasks"></h3>
+    <ul id="completed-tasks-list">
+    <button id= "editBtn" type="button">Edit</button>
+      <li id="completed-item"></li>
+    </ul>
+    <button id= "deleteBtn" type="button">Delete</button>
+    </div> `;
+}
 
-// MOVING COMPLETED TASKS
-// function markTaskComplete() {
-//   console.log("move");
-//   let completeTask = document.querySelectorAll(".task-checkbox");
-//   completeTask[i].addEventListener("click", () => {
-//     let completeTaskid
-//   }
-// }
+function createTaskEditButton() {
+  // EDIT BTN FOR INCOMPLETE TASKS
 
-// gets and displays from json
+  let editBtn = document.createElement("editBtn");
+  editBtn.setAttribute("id", `editBtn-${task.id}`);
+  editBtn.textContent = "edit";
+  editBtn.addEventListener("click", () => {
+    console.log("edit");
+    // let editForm = createTaskEditForm(task);
+    addEditFormDOM(div.id.editForm);
+  });
+  el.appendChild(editBtn);
 
+}
+// createTaskEditButton()
+
+// GETS and DISPLAYS from json
 const listTasks = taskArr => {
   let taskDisplay = document.querySelector("#incomplete-tasks-list");
   document.querySelector("#incomplete-tasks-list").innerHTML = " ";
