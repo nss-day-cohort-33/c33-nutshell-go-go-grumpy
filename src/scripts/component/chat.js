@@ -81,7 +81,7 @@ function createChatDisplay(chats) {
 function createChatEditForm(chats) {
   return `
   <fieldset>
-    <input type="text" name="chat-edit-entry" id="chat-edit-entry" value= ${chats.entry}>
+    <textarea type="text" name="chat-edit-entry" id="chat-edit-entry" value= ${chats.entry}></textarea>
     <input type="hidden" id="chat-edit-id" value=${chats.id}>
   </fieldset>
   <button id="editSaveBtn" type="button">Save Edit</button>`

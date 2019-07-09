@@ -8,9 +8,9 @@ function createLoginFormComponent() {
     let formContainer = document.querySelector("#container")
     formContainer.innerHTML = `
     <h2>Welcome User. Please input your login information</h2>
-    <input id="userName" name="userEditor" type="text" placeholder="User Name">
-    <input id="userPassword" name="userEditor" type="password" placeholder="Password">
-    <button id="loginBtn">Login</button>
+    <input class="login-field" id="userName" name="userEditor" type="text" placeholder="User Name">
+    <input class="login-field" id="userPassword" name="userEditor" type="password" placeholder="Password">
+    <button class="login-field" id="loginBtn">Login</button>
     `
     loginEvent()
 }

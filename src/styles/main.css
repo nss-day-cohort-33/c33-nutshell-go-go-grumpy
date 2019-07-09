@@ -125,17 +125,26 @@ textarea {
   width: 350px;
 }
 
+textarea#chat-edit-entry {
+  width: 310px;
+}
+
 input {
   text-transform: uppercase;
 }
 
 #chat-display fieldset {
   margin: 0 auto 10px;
-  width: 350px;
+  width: 330px;
   padding: 20px;
 }
 
 [id^=createUser] {
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.login-field {
   display: block;
   margin: 0 auto 10px;
 }
