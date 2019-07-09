@@ -43,7 +43,7 @@ function eventFactory(name, location, date, currentUserId) {
 function saveEventListener() {
     let formContainer = document.querySelector("#container")
     document.querySelector("#saveBtn").addEventListener("click", function () {
-        let current = sessionStorage.getItem(name)
+        let current = sessionStorage.getItem("userId")
         console.log("button")
         let nameEventValue = document.querySelector("#nameOfEvent").value
         let dateEventValue = document.querySelector("#eventDate").value

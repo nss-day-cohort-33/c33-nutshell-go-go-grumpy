@@ -55,8 +55,11 @@ function loginEvent() {
                 createNavBar()
                 sessionStorage.setItem("userId", user[0].id)
                 sessionStorage.setItem("userName", user[0].name)
+                let users = sessionStorage.getItem("userId")
+
     //Call function to load homepage
                 populateHomepage()
+                console.log (users)
     //Do something else if the name and password don't exist
             } else {
                 alert("Improper credentials submitted. Pleaase try again.")

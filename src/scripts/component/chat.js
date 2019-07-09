@@ -1,6 +1,6 @@
 
 import {postChatData, deleteChat, putChat, getAllChat} from "../api-handler/chat-handler"
-// Lindsey and Matthew handling CRUD
+// Lindsey and Matthew handling chat CRUD
 function createChatForm() {
   getAllChat()
       .then(poop =>

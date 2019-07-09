@@ -3,6 +3,8 @@
 import { createEventForm, saveEventListener } from "./event.js"
 import {createArticleForm, newsListener} from "./new.js"
 import { createChatForm} from "./chat.js"
+import { createTaskList, taskListener} from "./task.js";
+import { populateHomepage } from "./homepage.js";
 
 
 function createNavBar() {
@@ -13,13 +15,13 @@ function createNavBar() {
     <button id="eventsMod" type="button">View your events</button>
     <button id="tasksMod" type="button">View your tasks</button>
     <button id="chatMod" type="button">View your chats</button>
-    <button id="friendsMod" type="button">View your friends list</button>
+    <button id="homeMod" type="button">Return Home</button>
     `
     let newsBtn = document.querySelector("#newsMod")
     let eventsBtn = document.querySelector("#eventsMod")
     let tasksBtn = document.querySelector("#tasksMod")
     let chatBtn = document.querySelector("#chatMod")
-    let friendsBtn = document.querySelector("#friendsMod")
+    let homeBtn = document.querySelector("#homeMod")
     newsBtn.addEventListener("click", () => {
         console.log("news")
         createArticleForm()
@@ -32,14 +34,15 @@ function createNavBar() {
     })
     tasksBtn.addEventListener("click", () => {
         console.log("tasks")
-
+        createTaskList()
+          taskListener()
     })
     chatBtn.addEventListener("click", () => {
         console.log("chats")
         createChatForm()
     })
-    friendsBtn.addEventListener("click", () => {
-        console.log("friends")
+    homeBtn.addEventListener("click", () => {
+        populateHomepage()
     })
 }
 

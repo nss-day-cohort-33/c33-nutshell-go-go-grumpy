@@ -78,193 +78,128 @@
   ],
   "articles": [
     {
-      "name": "dongle butt",
-      "summary": "many things",
-      "url": "dongleipsum@thing.com",
-      "id": 4
-    },
-    {
-      "name": "this this this",
-      "summary": "one two three",
-      "url": "three two one",
-      "id": 8
-    }
-  ],
-  "events": [
-    {
-      "name": "hello",
-      "date": "undefined",
-      "location": "klewfj",
-      "id": 3
-    },
-    {
-      "name": "h",
-      "date": "",
-      "location": "",
-      "id": 4
-    },
-    {
-      "name": "goodbye",
-      "date": "undefined",
-      "location": "hello",
-      "id": 14
-    },
-    {
-      "name": "fewijjg",
-      "date": "undefined",
-      "location": "weiof",
-      "id": 15
-    },
-    {
-      "name": "fewijjg",
-      "date": "2019-07-09",
-      "location": "jelwkg",
-      "currentUser": "3",
-      "id": 16
-    },
-    {
-      "name": "helelo",
-      "date": "undefined",
-      "location": "dfklsaj",
-      "id": 17
-    },
-    {
-      "name": "greqjgi",
-      "date": "undefined",
-      "location": "ewf",
-      "id": 19
-    },
-    {
-      "name": "afds",
-      "date": "undefined",
-      "location": "please",
-      "id": 20
-    },
-    {
-      "name": "asdf",
-      "date": "",
-      "location": "sdf",
-      "currentUser": "3",
-      "id": 21
-    },
-    {
-      "name": "hello",
-      "date": "undefined",
-      "location": "ewagrwa",
-      "id": 23
-    },
-    {
-      "name": "boy",
-      "date": "undefined",
-      "location": "ewagrwa",
-      "currentUser": "8",
-      "id": 24
-    },
-    {
-      "name": "girl",
-      "date": "undefined",
-      "location": "ewagrwa",
-      "currentUser": "8",
-      "id": 25
-    },
-    {
-      "name": "afadf",
-      "date": "",
-      "location": "ewagrwa",
-      "currentUser": "8",
-      "id": 26
-    },
-    {
-      "name": "afe",
-      "date": "",
-      "location": "",
-      "currentUser": "8",
-      "id": 27
-    },
-    {
-      "name": "",
-      "date": "2019-07-09",
-      "location": "km",
-      "currentUser": null,
-      "id": 28
-    },
-    {
-      "name": "",
-      "date": "2019-07-09",
-      "location": "km",
-      "currentUser": null,
-      "id": 29
-    },
-    {
-      "name": "",
-      "date": "2019-07-09",
-      "location": "km",
-      "currentUser": null,
-      "id": 30
-    },
-    {
-      "name": "",
-      "date": "2019-07-09",
-      "location": "km",
-      "currentUser": null,
-      "id": 31
-    },
-    {
-      "name": "",
-      "date": "2019-07-09",
-      "location": "km",
-      "currentUser": null,
-      "id": 32
-    },
-    {
-      "name": "",
-      "date": "2019-07-09",
-      "location": "km",
-      "currentUser": null,
-      "id": 33
-    },
-    {
-      "name": "",
-      "date": "2019-07-09",
-      "location": "km",
-      "currentUser": null,
-      "id": 34
-    },
-    {
-      "name": "",
-      "date": "2019-07-09",
-      "location": "km",
-      "currentUser": null,
-      "id": 35
-    },
-    {
-      "name": "",
-      "date": "2019-07-09",
-      "location": "km",
-      "currentUser": null,
-      "id": 36
-    }
-  ],
-  "chats": [
-    {
-      "userName": "mathew",
-      "entry": "hello",
-      "currentUser": "8",
-      "id": 1
-    },
-    {
-      "userName": "blue",
-      "entry": "goodbye",
-      "currentUser": "3",
-      "id": 2
-    },
-    {
-      "userName": "mathew",
-      "entry": "boy ",
+      "name": "m,n",
+      "summary": ",mn",
+      "url": ",mn",
       "currentUser": "8",
       "id": 3
     }
   ],
   "tasks": [],
+  "events": [
+    {
+      "name": "graew",
+      "date": "aewg",
+      "location": "ewag",
+      "currentUser": null,
+      "id": 1
+    },
+    {
+      "name": "fsd",
+      "date": "afds",
+      "location": "dasf",
+      "currentUser": null,
+      "id": 2
+    },
+    {
+      "name": "fsd",
+      "date": "afds",
+      "location": "dasf",
+      "currentUser": null,
+      "id": 3
+    },
+    {
+      "name": "fas",
+      "date": "fads",
+      "location": "dsa",
+      "currentUser": null,
+      "id": 4
+    },
+    {
+      "name": ",nm",
+      "date": ",n",
+      "location": "n,m",
+      "currentUser": null,
+      "id": 5
+    },
+    {
+      "name": ",nm",
+      "date": ",n",
+      "location": "n,m",
+      "currentUser": null,
+      "id": 6
+    },
+    {
+      "name": ",nm",
+      "date": ",n",
+      "location": "n,m",
+      "currentUser": null,
+      "id": 7
+    },
+    {
+      "name": ",nm",
+      "date": ",n",
+      "location": "n,m",
+      "currentUser": null,
+      "id": 8
+    },
+    {
+      "name": ",nm",
+      "date": ",n",
+      "location": "n,m",
+      "currentUser": null,
+      "id": 9
+    },
+    {
+      "name": ",nm",
+      "date": ",n",
+      "location": "n,m",
+      "currentUser": null,
+      "id": 10
+    },
+    {
+      "name": ",nm",
+      "date": ",n",
+      "location": "n,m",
+      "currentUser": null,
+      "id": 11
+    },
+    {
+      "name": ",nm",
+      "date": ",n",
+      "location": "n,m",
+      "currentUser": null,
+      "id": 12
+    },
+    {
+      "name": "",
+      "date": "",
+      "location": "",
+      "currentUser": null,
+      "id": 13
+    },
+    {
+      "name": "",
+      "date": "",
+      "location": "",
+      "currentUser": null,
+      "id": 14
+    },
+    {
+      "name": "",
+      "date": "",
+      "location": "",
+      "currentUser": null,
+      "id": 15
+    },
+    {
+      "name": "gadg",
+      "date": "gagewa",
+      "location": "geaw",
+      "currentUser": "8",
+      "id": 16
+    }
+  ],
+  "chats": [],
   "friends": []
 }
