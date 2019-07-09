@@ -1,4 +1,4 @@
-import { postEventsData, getEventsData, deleteEvent, putEvent} from "../api-handler/event-handler.js";
+import { postEventsData, getEventsData, deleteEvent, putEvent } from "../api-handler/event-handler.js";
 
 // Updates the display so that the current data from json
 function createEventForm() {
@@ -9,7 +9,8 @@ function createEventForm() {
     // creating the the form to input the data.
     let formContainer = document.querySelector("#container")
     formContainer.innerHTML = `
-
+        <h1 class="page-heading"><span class="icon-events"></span> events</h1>
+        <div class="page-body">
         <fieldset>
         <label for="NameOfEvent">Event Name</label>
         <input type="text" name="NameOfEvent" id="nameOfEvent">
@@ -24,6 +25,7 @@ function createEventForm() {
     </fieldset>
     <button id= "saveBtn" type="button">Save Event</button>
     <div id = "displayEvents"></div>
+    </div>
     `
 }
 
@@ -46,12 +48,12 @@ function saveEventListener() {
         let locationEventValue = document.querySelector("#locationOfEvent").value
         let newEvent = eventFactory(nameEventValue, locationEventValue, dateEventValue)
         postEventsData(newEvent)
-        .then((event)=>{
-        getEventsData(event)
-            .then(events =>
-                listEvents(events)
-            )
-        })
+            .then((event) => {
+                getEventsData(event)
+                    .then(events =>
+                        listEvents(events)
+                    )
+            })
     })
 }
 
@@ -93,7 +95,7 @@ function createEvent(events) {
     // the edit button
     editBtn.setAttribute("id", `editBtn-${events.id}`)
     editBtn.textContent = "edit"
-    editBtn.addEventListener("click", ()=> {
+    editBtn.addEventListener("click", () => {
         console.log("edit button")
         let editForm = createEventEditForm(events)
         addEditFormDOM(div.id, editForm)
@@ -108,7 +110,7 @@ function createEvent(events) {
 
 
 // creating the Edit form  to input the new data
-function createEventEditForm (events){
+function createEventEditForm(events) {
     return `
 
     <fieldset >
@@ -139,23 +141,23 @@ const listEvents = (eventArr) => {
 }
 
 // will add the edited event to the data base and update the list of events
-function addEditFormDOM (editContainer, editForm){
+function addEditFormDOM(editContainer, editForm) {
     let eventDisplay = document.querySelector("#displayEvents")
     document.querySelector(`#${editContainer}`).innerHTML = editForm;
     document.querySelector("#editSaveBtn").addEventListener("click", () => {
-    let eventName = document.querySelector("#editNameOfEvent").value
-    let eventDate = document.querySelector("#editEventDate").value
-    let eventLocation = document.querySelector("#editLocationOfEvent").value
-    let eventID = document.querySelector("#editEvent-id").value
-    let updateEvent = eventFactory(eventName, eventLocation, eventDate)
+        let eventName = document.querySelector("#editNameOfEvent").value
+        let eventDate = document.querySelector("#editEventDate").value
+        let eventLocation = document.querySelector("#editLocationOfEvent").value
+        let eventID = document.querySelector("#editEvent-id").value
+        let updateEvent = eventFactory(eventName, eventLocation, eventDate)
         updateEvent.id = eventID
-    putEvent(updateEvent)
-    .then (() => {
-        eventDisplay.innerHTML = ""
-        getEventsData()
-        .then(newEvent => listEvents(newEvent))
+        putEvent(updateEvent)
+            .then(() => {
+                eventDisplay.innerHTML = ""
+                getEventsData()
+                    .then(newEvent => listEvents(newEvent))
+            })
     })
-})
 }
 
 

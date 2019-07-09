@@ -9,12 +9,12 @@ function createNavBar() {
     let navBarDiv = document.querySelector("#navContainer")
     navBarDiv.setAttribute("id", "navBar")
     navBarDiv.innerHTML = `
-    <img class="logo" src="../images/logo.png"/>
-    <button id="newsMod" type="button"><span class="icon-news"></span> news</button>
-    <button id="eventsMod" type="button"><span class="icon-events"></span> events</button>
-    <button id="tasksMod" type="button"><span class="icon-tasks"></span> tasks</button>
-    <button id="friendsMod" type="button"><span class="icon-friends"></span> friends</button>
-    <button id="chatMod" type="button"><span class="icon-chats"></span> messages</button>
+    <img class="logo" src="../src/images/logo.png"/>
+    <button id="newsMod" type="button">news</button>
+    <button id="eventsMod" type="button">events</button>
+    <button id="tasksMod" type="button">tasks</button>
+    <button id="friendsMod" type="button">friends</button>
+    <button id="chatMod" type="button">messages</button>
     `
     let newsBtn = document.querySelector("#newsMod")
     let eventsBtn = document.querySelector("#eventsMod")

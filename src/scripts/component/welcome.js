@@ -20,7 +20,7 @@ function registerEvent() {
 //Function to create the initial welcome page
 function createWelcomePage() {
     welcomeContainer.innerHTML = `
-    <img class="logo home-logo" src="../images/logo.png"/>
+    <img class="logo home-logo" src="../src/images/logo.png"/>
     <h1 class="welcomeh1">Welcome to the Nuthouse</h1>
     <h2 class="welcomeh2">Please login or register to continue to your dashboard.</h2>
     <div class="btn-container">

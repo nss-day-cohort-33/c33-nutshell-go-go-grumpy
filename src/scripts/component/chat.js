@@ -8,7 +8,8 @@ function createChatForm() {
     )
   let selectDOM = document.querySelector("#container");
   selectDOM.innerHTML = ` 
-    <div id="chat-display"></div>
+    <h1 class="page-heading"><span class="icon-chats"></span> messages</h1>
+    <div id="chat-display" class="page-body"></div>
     <textarea id="chat-entry" type="text"></textarea>
     <button id="chat-send">send chat</button>
   `;
