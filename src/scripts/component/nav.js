@@ -2,7 +2,7 @@
 
 import { createEventForm, saveEventListener } from "./event.js"
 import {createArticleForm, newsListener} from "./new.js"
-import { eventListener, createChatForm} from "./chat.js"
+import { createChatForm} from "./chat.js"
 
 
 function createNavBar() {
@@ -37,7 +37,6 @@ function createNavBar() {
     chatBtn.addEventListener("click", () => {
         console.log("chats")
         createChatForm()
-        eventListener()
     })
     friendsBtn.addEventListener("click", () => {
         console.log("friends")
