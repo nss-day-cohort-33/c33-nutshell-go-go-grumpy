@@ -10,7 +10,7 @@ function populateHomepage() {
     let currentUserId = sessionStorage.getItem("userId");
   homepageContainer.innerHTML = `
     <div id="mainHomepageDiv">
-        <h1>Bitchin. It's a homepage</h1>
+        <h1> It's a homepage</h1>
         <section id="eventsSection">
             <h2>Check out your events</h2>
         </section>

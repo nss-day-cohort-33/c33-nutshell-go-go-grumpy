@@ -2,8 +2,8 @@
 
 import { postData, putData, getData, deleteData } from "./api-handler.js";
 
-function getTaskData() {
-  return getData("tasks");
+function getTaskData(currentUser) {
+  return getData("tasks", currentUser);
 }
 function putTaskData(placeholder) {
   return putData("tasks", placeholder)

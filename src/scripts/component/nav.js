@@ -3,7 +3,7 @@
 import { createEventForm, saveEventListener } from "./event.js"
 import {createArticleForm, newsListener} from "./new.js"
 import { createChatForm} from "./chat.js"
-import { createTaskList } from "./task.js";
+import { createTaskList, taskListener} from "./task.js";
 import { populateHomepage } from "./homepage.js";
 
 
@@ -35,6 +35,7 @@ function createNavBar() {
     tasksBtn.addEventListener("click", () => {
         console.log("tasks")
         createTaskList()
+          taskListener()
     })
     chatBtn.addEventListener("click", () => {
         console.log("chats")

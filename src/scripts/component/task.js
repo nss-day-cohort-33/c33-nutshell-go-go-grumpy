@@ -1,3 +1,4 @@
+// Mark Price
 import {
   getTaskData,
   putTaskData,
@@ -6,7 +7,13 @@ import {
 } from "../api-handler/task-handler";
 
 function createTaskList() {
+
   let formTaskList = document.querySelector("#container");
+  let currentUserId = sessionStorage.getItem("userId")
+  getTaskData(currentUserId)
+  .then (task =>
+    listTasks(task)
+    )
   formTaskList.innerHTML = `
   <h2>Tasks ToDo</h2>
     <fieldset >
@@ -24,9 +31,7 @@ function createTaskList() {
     </div>
     <div id ="displayTaskComplete"><h3 id="completed-tasks"></h3>
     <ul id="completed-tasks-list">
-    <button id= "editBtn" type="button">Edit</button>
     </ul>
-    <button id= "deleteBtn" type="button">Delete</button>
     </div> `;
 
   // RADIO BUTTON EVENT
@@ -44,26 +49,30 @@ function createTaskList() {
         // }
       }
     });
+
 }
 
 // template for database json
-function buildTaskObj(todo, date, complete) {
+function buildTaskObj(todo, date, currentUserId) {
   return {
     newTaskEntry: todo,
     date: date,
-    completedTask: complete
+    currentUser: currentUserId
   };
 }
 // ATTACH EVENT LISTENER TO FORM
 function taskListener() {
+
   let taskContainer = document.querySelector("#container");
   document.querySelector("#saveBtn").addEventListener("click", () => {
+    let currentUserId = sessionStorage.getItem("userId")
     console.log("save clicked");
     let nameTaskValue = document.querySelector("#nameOfTask").value;
     let dateTaskValue = document.querySelector("#taskDate").value;
-    let newTask = buildTaskObj(nameTaskValue, dateTaskValue);
-    postTaskData(newTask).then(() => {
-      getTaskData()
+    let newTask = buildTaskObj(nameTaskValue, dateTaskValue, currentUserId);
+    postTaskData(newTask)
+    .then(() => {
+      getTaskData(currentUserId)
         // console.log("new task")
         .then(todo => listTasks(todo));
     });
@@ -71,6 +80,7 @@ function taskListener() {
 }
 // CREATES THE TASK ITEMS
 function createTasks(tasks) {
+  let currentUserId = sessionStorage.getItem("userId")
   let el = document.createElement("div");
   let div = document.createElement("div");
   let section = document.createElement("section");
@@ -103,13 +113,15 @@ function createTasks(tasks) {
     deleteTaskData(id).then(data => {
       console.log(data);
       incompleteTasksContainer.innerHTML = " ";
-      getTaskData().then(tasks => listTasks(tasks));
+      getTaskData(currentUserId).then(tasks => listTasks(tasks));
     });
   });
   el.appendChild(div);
   el.appendChild(deleteBtn);
   return el;
+
 }
+
 function createTaskEditForm(task) {
   let taskContainer = document.querySelector(`#editField-${task.id}`);
   taskContainer.innerHTML = `
@@ -133,7 +145,6 @@ function createTaskEditForm(task) {
     <button id= "editBtn" type="button">Edit</button>
       <li id="completed-item"></li>
     </ul>
-    <button id= "deleteBtn" type="button">Delete</button>
     </div> `;
 }
 
@@ -160,4 +171,4 @@ const listTasks = taskArr => {
   taskArr.forEach(task => taskDisplay.appendChild(createTasks(task)));
 };
 
-export { createTaskList, taskListener };
+export { createTaskList, taskListener};

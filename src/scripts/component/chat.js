@@ -1,13 +1,13 @@
 
-import { getChatData, postChatData, deleteChat, putChat } from "../api-handler/chat-handler"
-
+import {postChatData, deleteChat, putChat, getAllChat} from "../api-handler/chat-handler"
+// Lindsey and Matthew handling chat CRUD
 function createChatForm() {
-  getChatData()
+  getAllChat()
       .then(poop =>
           listChats(poop)
       )
   let selectDOM = document.querySelector("#container");
-  selectDOM.innerHTML = ` 
+  selectDOM.innerHTML = `
     <div id="chat-display"></div>
     <input id="chat-entry" type="text">
     <button id="chat-send">send chat</button>
@@ -15,26 +15,32 @@ function createChatForm() {
   eventListener()
 }
 
-function chatFactory(entry) {
+function chatFactory(entry, currentUserId, name){
   return {
-    entry: entry
+    userName: name,
+    entry: entry,
+    currentUser: currentUserId
   }
 }
 
 function eventListener() {
+  let currentUserId = sessionStorage.getItem("userId")
+  let getUserName = sessionStorage.getItem("userName")
   document.querySelector("#chat-send").addEventListener("click", function () {
     let chatEntry = document.querySelector("#chat-entry").value
-    let newChat = chatFactory(chatEntry)
+    let newChat = chatFactory(chatEntry, currentUserId, getUserName)
     postChatData(newChat)
     .then(() => {
-      getChatData()
+    getAllChat()
         .then (chatData => listChats(chatData))
     })
   })
+
 }
 
 function createChatDisplay(chats){
   let chatsDisplay = document.querySelector("#chat-display")
+  let currentUserId = sessionStorage.getItem("userId")
   let el = document.createElement("div");
   let div = document.createElement("div");
   let section = document.createElement("section");
@@ -43,12 +49,15 @@ function createChatDisplay(chats){
   section.innerHTML = `
   <section id="${chats.id}">
     <article>
+      <p>${chats.userName}</p>
       <p>${chats.entry}</p>
     </article>
   </section>`
   el.appendChild(section)
   el.appendChild(div)
   div.setAttribute("id", `eventContainer-${chats.id}`)
+  if (currentUserId === `${chats.currentUser}`){
+    console.log(currentUserId)
   deleteBtn.setAttribute("id", `${chats.id}`)
   deleteBtn.textContent = "delete"
   deleteBtn.addEventListener("click", () => {
@@ -56,7 +65,7 @@ function createChatDisplay(chats){
     deleteChat(id)
       .then(data => {
         chatsDisplay.innerHTML = ""
-        getChatData()
+           getAllChat()
           .then(poop =>
             listChats(poop)
           )
@@ -73,6 +82,7 @@ function createChatDisplay(chats){
 
   el.appendChild(deleteBtn)
   el.appendChild(editBtn)
+}
   return el
 }
 
@@ -88,12 +98,13 @@ function createChatEditForm (chats){
 let listChats = (chatData) => {
   let chatsDisplay = document.querySelector("#chat-display")
   chatsDisplay.innerHTML = ""
-  chatData.forEach(poop => {
-    chatsDisplay.appendChild(createChatDisplay(poop))
+  chatData.forEach(user => {
+    chatsDisplay.appendChild(createChatDisplay(user))
   })
 }
 
 function addChatFormDOM (chatContainer, chatForm){
+  let currentUserId = sessionStorage.getItem("userId")
   let eventDisplay = document.querySelector("#chat-display")
   document.querySelector(`#${chatContainer}`).innerHTML = chatForm;
   document.querySelector("#editSaveBtn").addEventListener("click", () => {
@@ -104,7 +115,7 @@ function addChatFormDOM (chatContainer, chatForm){
   putChat(updateChat)
   .then (() => {
       eventDisplay.innerHTML = ""
-      getChatData()
+      getAllChat()
       .then(newChat => listChats(newChat))
   })
 })
