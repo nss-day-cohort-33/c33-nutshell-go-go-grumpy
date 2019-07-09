@@ -5,8 +5,8 @@ import { getData, postData, deleteData } from "./api-handler";
 // Handles the news API
 // Matthew McDevitt, Curt
 
-function getNewsData (){
-    return getData("articles")
+function getNewsData (currentUser){
+    return getData("articles", currentUser)
    }
 
 function postNewsData (placeholder){

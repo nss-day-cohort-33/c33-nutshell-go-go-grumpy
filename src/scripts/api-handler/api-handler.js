@@ -1,6 +1,11 @@
 // To handle the different fetch calls
 // Matthew McDevitt and Curt Cato
-function getData(inputData){
+function getData(inputData, currentUser){
+    return fetch(`http://localhost:8088/${inputData}/?currentUser=${currentUser}`)
+    .then( data => data.json())
+   }
+
+function getAllData(inputData){
  return fetch(`http://localhost:8088/${inputData}`)
  .then( data => data.json())
 }
@@ -35,4 +40,4 @@ function deleteData(resource, id){
     })
 }
 
-export {getData, postData, putData, deleteData}
+export {getData, postData, putData, deleteData, getAllData }
