@@ -1,9 +1,9 @@
 import { postEventsData, getEventsData, deleteEvent, putEvent} from "../api-handler/event-handler.js";
-
+// Matthew McDevitt handles the event CRUD
 
 // Updates the display so that the current data from json
 function createEventForm() {
-    let currentUserId = sessionStorage.getItem(name)
+    let currentUserId = sessionStorage.getItem("userId")
     getEventsData(currentUserId)
         .then(events =>
             listEvents(events)
@@ -18,7 +18,7 @@ function createEventForm() {
     </fieldset>
     <fieldset>
         <label for="eventDate">Event Date</label>
-        <input type="date" name="EventDate" id="eventDate" >
+        <input type="text" name="EventDate" id="eventDate" >
     </fieldset>
     <fieldset>
         <label for="locationOfEvent">Location of Event:</label>
@@ -61,7 +61,7 @@ function saveEventListener() {
 
 //  creates the event items that are posted under the form
 function createEvent(events) {
-    let currentUserId = sessionStorage.getItem(name)
+    let currentUserId = sessionStorage.getItem("userId")
     parseInt(currentUserId)
     let eventDisplay = document.querySelector("#displayEvents")
     let el = document.createElement("div");
@@ -143,7 +143,7 @@ const listEvents = (eventArr) => {
 
 // will add the edited event to the data base and update the list of events
 function addEditFormDOM (editContainer, editForm){
-    let currentUserId = sessionStorage.getItem(name)
+    let currentUserId = sessionStorage.getItem("userId")
     let eventDisplay = document.querySelector("#displayEvents")
     document.querySelector(`#${editContainer}`).innerHTML = editForm;
     document.querySelector("#editSaveBtn").addEventListener("click", () => {
@@ -151,7 +151,7 @@ function addEditFormDOM (editContainer, editForm){
     let eventDate = document.querySelector("#editEventDate").value
     let eventLocation = document.querySelector("#editLocationOfEvent").value
     let eventID = document.querySelector("#editEvent-id").value
-    let updateEvent = eventFactory(eventName, eventLocation, eventDate, x)
+    let updateEvent = eventFactory(eventName, eventLocation, eventDate, currentUserId)
         updateEvent.id = eventID
     putEvent(updateEvent)
     .then (() => {

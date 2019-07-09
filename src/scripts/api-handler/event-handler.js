@@ -1,5 +1,8 @@
 import {getData, postData, deleteData, putData} from "./api-handler"
 
+// Matthew McDevitt
+// handles the event api
+
 function getEventsData (currentUser){
  return getData("events", currentUser)
 }

@@ -1,6 +1,6 @@
 
-import { getChatData, postChatData, deleteChat, putChat, getAllChat} from "../api-handler/chat-handler"
-
+import {postChatData, deleteChat, putChat, getAllChat} from "../api-handler/chat-handler"
+// Lindsey and Matthew handling CRUD
 function createChatForm() {
   getAllChat()
       .then(poop =>
@@ -28,8 +28,6 @@ function eventListener() {
   let getUserName = sessionStorage.getItem("userName")
   document.querySelector("#chat-send").addEventListener("click", function () {
     let chatEntry = document.querySelector("#chat-entry").value
-    chatEntry.value = ""
-
     let newChat = chatFactory(chatEntry, currentUserId, getUserName)
     postChatData(newChat)
     .then(() => {
