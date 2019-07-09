@@ -11,6 +11,77 @@
       "name": "blue",
       "password": "password",
       "email": "blueballz@email.com"
+    },
+    {
+      "id": 4
+    },
+    {
+      "name": "name",
+      "email": "email",
+      "password": "password",
+      "id": 5
+    },
+    {
+      "name": "Ween",
+      "email": "Ween@Deen.com",
+      "password": "WeenDeen",
+      "id": 6
+    },
+    {
+      "name": "mark",
+      "email": "mark@gmail.com",
+      "password": "markymark",
+      "id": 7
+    },
+    {
+      "name": "mathew",
+      "email": "mathew@email.com",
+      "password": "mathew",
+      "id": 8
+    },
+    {
+      "name": "name",
+      "email": "pass",
+      "password": "pass",
+      "id": 9
+    },
+    {
+      "name": "thing",
+      "email": "thing",
+      "password": "thing",
+      "id": 10
+    },
+    {
+      "name": "yes",
+      "email": "yes",
+      "password": "yes",
+      "id": 11
+    },
+    {
+      "name": "thing",
+      "email": "thing",
+      "password": "thing",
+      "id": 12
+    },
+    {
+      "name": "oh",
+      "email": "oh",
+      "password": "oh",
+      "id": 13
+    }
+  ],
+  "articles": [
+    {
+      "name": "dongle butt",
+      "summary": "many things",
+      "url": "dongleipsum@thing.com",
+      "id": 4
+    },
+    {
+      "name": "this this this",
+      "summary": "one two three",
+      "url": "three two one",
+      "id": 8
     }
   ],
   "tasks": [
@@ -58,5 +129,33 @@
   "articles": [],
   "events": [],
   "chats": [],
+  "events": [],
+  "chats": [
+    {
+      "id": 1,
+      "entry": "poop"
+    },
+    {
+      "entry": "two poops",
+      "id": 2
+    },
+    {
+      "entry": "three poops",
+      "id": 3
+    },
+    {
+      "entry": "two poops",
+      "id": 4
+    },
+    {
+      "entry": "yes",
+      "id": 5
+    },
+    {
+      "entry": "yes",
+      "id": 6
+    }
+  ],
+  "tasks": [],
   "friends": []
 }
