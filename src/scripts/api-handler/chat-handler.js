@@ -1,7 +1,10 @@
-import { getData, postData, deleteData, putData } from "./api-handler"
+import { getData, postData, deleteData, putData, getAllData } from "./api-handler"
 
-function getChatData() {
-  return getData("chats")
+function getChatData(currentUser) {
+  return getData("chats", currentUser)
+}
+function getAllChat (chat){
+  return getAllData("chats")
 }
 
 function postChatData(placeholder) {
@@ -17,4 +20,4 @@ function putChat (data){
 
 }
 
-export { getChatData, postChatData, deleteChat, putChat}
+export { getAllChat, getChatData, postChatData, deleteChat, putChat}

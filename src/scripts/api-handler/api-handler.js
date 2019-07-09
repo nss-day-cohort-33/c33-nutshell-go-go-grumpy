@@ -4,6 +4,10 @@ function getData(inputData, currentUser){
  return fetch(`http://localhost:8088/${inputData}/?currentUser=${currentUser}`)
  .then( data => data.json())
 }
+function getAllData(inputData){
+    return fetch(`http://localhost:8088/${inputData}`)
+    .then( data => data.json())
+   }
 
 
 function  postData(selectData, data){
@@ -36,4 +40,4 @@ function deleteData(resource, id){
     })
 }
 
-export {getData, postData, putData, deleteData}
+export {getData, postData, putData, deleteData, getAllData}

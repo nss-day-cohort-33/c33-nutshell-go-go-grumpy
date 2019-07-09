@@ -62,6 +62,7 @@ function saveEventListener() {
 //  creates the event items that are posted under the form
 function createEvent(events) {
     let currentUserId = sessionStorage.getItem(name)
+    parseInt(currentUserId)
     let eventDisplay = document.querySelector("#displayEvents")
     let el = document.createElement("div");
     let div = document.createElement("div");
