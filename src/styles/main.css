@@ -49,7 +49,8 @@ button:hover {
   color: rgba(255, 255, 255, 1);
 }
 
-#saveNews {
+#saveNews,
+#saveBtn {
   margin-top: 30px;
 }
 

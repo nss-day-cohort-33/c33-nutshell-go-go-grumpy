@@ -11,20 +11,14 @@ function createEventForm() {
     formContainer.innerHTML = `
         <h1 class="page-heading"><span class="icon-events"></span> events</h1>
         <div class="page-body">
-        <fieldset>
+        <div id = "displayEvents"></div>
         <label for="NameOfEvent">Event Name</label>
         <input type="text" name="NameOfEvent" id="nameOfEvent">
-    </fieldset>
-    <fieldset>
         <label for="eventDate">Event Date</label>
         <input type="date" name="EventDate" id="eventDate" >
-    </fieldset>
-    <fieldset>
         <label for="locationOfEvent">Location of Event:</label>
         <input type="text" name="locationOfEvent" id="locationOfEvent">
-    </fieldset>
     <button id= "saveBtn" type="button">Save Event</button>
-    <div id = "displayEvents"></div>
     </div>
     `
 }
@@ -77,6 +71,7 @@ function createEvent(events) {
     div.setAttribute("id", `eventContainer-${events.id}`)
     // the delete button control
     deleteBtn.setAttribute("id", `${events.id}`)
+    deleteBtn.setAttribute("class", "btn-delete");
     deleteBtn.textContent = "delete"
     deleteBtn.addEventListener("click", () => {
         console.log("hello")
@@ -94,6 +89,7 @@ function createEvent(events) {
     })
     // the edit button
     editBtn.setAttribute("id", `editBtn-${events.id}`)
+    editBtn.setAttribute("class", "btn-edit")
     editBtn.textContent = "edit"
     editBtn.addEventListener("click", () => {
         console.log("edit button")
