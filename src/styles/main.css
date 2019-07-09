@@ -7,7 +7,9 @@ body {
 }
 
 #container {
+  margin: 0 auto;
   padding: 60px 30px;
+  text-align: center;
 }
 
 #navBar {
@@ -63,6 +65,10 @@ button.btn-delete:hover {
   color: rgba(255, 255, 255, 1);
 }
 
+button#chat-send {
+  margin: 20px 0 0 200px;
+}
+
 .welcomeh1 {
   font-weight: 300;
   letter-spacing: 5px;
@@ -87,13 +93,49 @@ button.btn-delete:hover {
 }
 
 #chat-display {
+  border: 1px solid #fff;
+  margin: 0 auto 40px;
+  max-width: 380px;
+  padding: 0 30px 0;
+}
+
+#chat-display > div {
   border-bottom: 1px solid #fff;
-  margin: 0 0 40px;
-  padding: 0 0 30px;
+  margin: 0 0 30px;
+  padding-bottom: 30px;
+}
+
+#chat-display > div:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+textarea, input {
+  min-width: 160px;
+  min-height: 20px;
+  padding: 10px;
 }
 
 textarea {
-  min-width: 180px;
-  min-height: 45px;
+  border: none;
+  display: block;
+  font-family: 'Laila', serif;
+  margin: 0 auto;
   resize: vertical;
+  width: 350px;
+}
+
+input {
+  text-transform: uppercase;
+}
+
+#chat-display fieldset {
+  margin: 0 auto 10px;
+  width: 350px;
+  padding: 20px;
+}
+
+[id^=createUser] {
+  display: block;
+  margin: 0 auto 10px;
 }

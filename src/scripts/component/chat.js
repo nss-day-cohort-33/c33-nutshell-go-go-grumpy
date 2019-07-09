@@ -48,9 +48,9 @@ function createChatDisplay(chats) {
   </section>`
   el.appendChild(section)
   el.appendChild(div)
-  div.setAttribute("id", `eventContainer-${chats.id}`)
+  div.setAttribute("id", `chatContainer-${chats.id}`)
   deleteBtn.setAttribute("id", `${chats.id}`)
-  deleteBtn.setAttribute("class", `btn-delete`)
+  deleteBtn.setAttribute("class", "btn-delete")
   deleteBtn.textContent = "delete"
   deleteBtn.addEventListener("click", () => {
     let id = event.target.id
@@ -65,7 +65,7 @@ function createChatDisplay(chats) {
   })
 
   editBtn.setAttribute("id", `editBtn-${chats.id}`)
-  editBtn.setAttribute("class", `btn-edit`)
+  editBtn.setAttribute("class", "btn-edit")
   editBtn.textContent = "edit"
   editBtn.addEventListener("click", () => {
     console.log("edit clicked")
@@ -84,7 +84,7 @@ function createChatEditForm(chats) {
     <input type="text" name="chat-edit-entry" id="chat-edit-entry" value= ${chats.entry}>
     <input type="hidden" id="chat-edit-id" value=${chats.id}>
   </fieldset>
-  <button id="editSaveBtn" type="button">Save Chat</button>`
+  <button id="editSaveBtn" type="button">Save Edit</button>`
 }
 
 let listChats = (chatData) => {
