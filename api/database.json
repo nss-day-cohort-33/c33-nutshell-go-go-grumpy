@@ -68,20 +68,21 @@
       "email": "oh",
       "password": "oh",
       "id": 13
+    },
+    {
+      "name": "dude",
+      "email": "dude",
+      "password": "dude",
+      "id": 14
     }
   ],
   "articles": [
     {
-      "name": "dongle butt",
-      "summary": "many things",
-      "url": "dongleipsum@thing.com",
-      "id": 4
-    },
-    {
-      "name": "this this this",
-      "summary": "one two three",
-      "url": "three two one",
-      "id": 8
+      "name": "work",
+      "summary": "work",
+      "url": "work",
+      "currentUser": "8",
+      "id": 1
     }
   ],
   "tasks": [
@@ -94,42 +95,16 @@
       "newTaskEntry": "show",
       "date": "2019-07-08",
       "id": 4
-    },
-    {
-      "newTaskEntry": "T",
-      "date": "2019-07-03",
-      "id": 5
-    },
-    {
-      "newTaskEntry": "e",
-      "date": "2019-07-03",
-      "id": 6
-    },
-    {
-      "newTaskEntry": "e",
-      "date": "2019-07-03",
-      "id": 7
-    },
-    {
-      "newTaskEntry": "d",
-      "date": "2019-07-02",
-      "id": 8
-    },
-    {
-      "newTaskEntry": "col",
-      "date": "",
-      "id": 9
-    },
-    {
-      "newTaskEntry": "d",
-      "date": "2019-07-01",
-      "id": 10
     }
   ],
-  "articles": [],
-  "events": [],
-  "chats": [],
-  "events": [],
+  "events": [
+    {
+      "name": "event",
+      "date": "2019-07-10",
+      "location": "location",
+      "id": 1
+    }
+  ],
   "chats": [
     {
       "id": 1,
@@ -156,6 +131,5 @@
       "id": 6
     }
   ],
-  "tasks": [],
   "friends": []
 }

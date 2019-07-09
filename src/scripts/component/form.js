@@ -53,7 +53,7 @@ function loginEvent() {
             if (user.length > 0 && user[0].password === userPassword) {
                 console.log("you are registered")
                 createNavBar()
-                sessionStorage.setItem(name, user[0].id)
+                sessionStorage.setItem("userId", user[0].id)
     //Call function to load homepage
                 populateHomepage()
     //Do something else if the name and password don't exist
