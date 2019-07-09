@@ -68,46 +68,69 @@
       "email": "oh",
       "password": "oh",
       "id": 13
+    },
+    {
+      "name": "pooper",
+      "email": "poop@soop.com",
+      "password": "pooper",
+      "id": 14
+    },
+    {
+      "name": "pooper",
+      "email": "poop@soop.com",
+      "password": "pooper",
+      "id": 15
+    },
+    {
+      "name": "poop",
+      "email": "poop@poop.com",
+      "password": "poop",
+      "id": 16
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 17
     }
   ],
   "articles": [
     {
-      "name": "dongle butt",
-      "summary": "many things",
-      "url": "dongleipsum@thing.com",
+      "name": "dongle Debacle",
+      "summary": "Lorem ipsum dolor amet gluten-free mlkshk franzen lomo marfa asymmetrical try-hard, hexagon migas 8-bit polaroid put a bird on it truffaut. Bicycle rights air plant 8-bit aesthetic chicharrones meh direct trade palo santo heirloom everyday carry. Squid four loko literally vice. Slow-carb DIY typewriter echo park chicharrones glossier chillwave pabst vegan forage fashion axe raw denim yr enamel pin taiyaki.",
+      "url": "www.urlplace.com",
       "id": 4
     },
     {
-      "name": "this this this",
-      "summary": "one two three",
-      "url": "three two one",
+      "name": "this Dot Then",
+      "summary": "Lorem ipsum dolor amet live-edge shabby chic cliche locavore, kitsch pabst semiotics forage pop-up shoreditch vegan. Dreamcatcher ennui tilde single-origin coffee sriracha offal lo-fi chicharrones irony knausgaard bespoke selfies truffaut. Craft beer polaroid locavore, blog cardigan helvetica edison bulb food truck skateboard cornhole ethical drinking vinegar. Tumblr 90's selfies, 3 wolf moon glossier keffiyeh art party cloud bread four dollar toast slow-carb. Craft beer taxidermy crucifix edison bulb godard keytar pitchfork stumptown offal occupy fingerstache flexitarian chartreuse. Tacos typewriter palo santo, church-key gochujang semiotics shabby chic freegan single-origin coffee roof party kickstarter pitchfork skateboard. Shoreditch jean shorts small batch mustache dreamcatcher, drinking vinegar hexagon.",
+      "url": "www.three.com",
       "id": 8
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "name": "shelby avenue shelling",
+      "date": "2019-07-10",
+      "location": "Nuttsburg, PA",
+      "id": 1
+    }
+  ],
   "chats": [
     {
-      "id": 1,
-      "entry": "poop"
-    },
-    {
-      "entry": "two poops",
-      "id": 2
-    },
-    {
-      "entry": "three poops",
+      "entry": "Lorem ipsum dolor amet irony waistcoat everyday carry beard, selfies meggings actually brunch biodiesel DIY shaman fam. Prism heirloom raw denim chambray kogi. Pug portland sartorial brooklyn synth tbh thundercats. Trust fund retro listicle lyft cliche before they sold out. Tote bag copper mug microdosing neutra post-ironic.",
       "id": 3
     },
     {
-      "entry": "two poops",
+      "entry": "Lorem ipsum dolor amet pok pok godard shabby chic organic. Pickled fanny pack snackwave wayfarers kitsch cold-pressed ennui vice craft beer flannel church-key master cleanse cronut four loko. Brunch ramps aesthetic pok pok pinterest hoodie 8-bit. Kogi blog kale chips helvetica normcore live-edge pitchfork sartorial scenester air plant.",
       "id": 4
     },
     {
-      "entry": "yes",
+      "entry": "Lorem ipsum dolor amet ramps roof party farm-to-table cardigan messenger bag ennui. Whatever swag ennui cliche cardigan. Truffaut four loko leggings craft beer. Bicycle rights trust fund knausgaard irony celiac craft beer. Freegan yuccie celiac ethical migas etsy tumblr asymmetrical kombucha fanny pack brooklyn. Raclette portland chia, mlkshk trust fund tote bag lo-fi DIY microdosing biodiesel deep v heirloom truffaut drinking vinegar pok pok.",
       "id": 5
     },
     {
-      "entry": "yes",
+      "entry": "Lorem ipsum dolor amet irony waistcoat everyday carry beard, selfies meggings actually brunch biodiesel DIY shaman fam. Prism heirloom raw denim chambray kogi. Pug portland sartorial brooklyn synth tbh thundercats. Trust fund retro listicle lyft cliche before they sold out. Tote bag copper mug microdosing neutra post-ironic.",
       "id": 6
     }
   ],

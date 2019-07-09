@@ -1,0 +1,211 @@
+
+body {
+  background-color: #594b42;
+  color: #fff;
+  font-family: 'Laila', serif;
+  margin: 0 auto;
+}
+
+#container {
+  margin: 90px auto 0;
+  padding: 60px 30px 100px;
+  text-align: center;
+}
+
+#navBar {
+  background-color: #8a5c3b;
+  left: 0;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+}
+
+.logo {
+  max-width: 420px;
+  margin-bottom: 40px;
+}
+
+#navBar .logo {
+  margin: 20px 40px 25px 0;
+  max-width: 170px;
+}
+
+button {
+  background-color: rgba(118, 153, 71, .7);
+  border: 1px solid #fff;
+  border-radius: 2px;
+  color: rgba(255, 255, 255, .7);
+  cursor: pointer;
+  font-family: 'Laila', serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  margin: 5px;
+  min-height: 45px;
+  min-width: 180px;
+  padding: 10px 10px;
+  text-transform: uppercase;
+  transition: all 400ms ease;
+}
+button:hover {
+  background-color: rgba(118, 153, 71, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+#saveNews,
+#saveBtn {
+  margin-top: 30px;
+}
+
+#navBar button {
+  background-color: transparent;
+  border: none;
+  display: inline-block;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+  min-width: auto;
+  text-transform: uppercase;
+  vertical-align: bottom;
+}
+
+button.btn-edit {
+  background-color: rgba(193, 130, 63, .7);
+}
+button.btn-edit:hover {
+  background-color: rgba(193, 130, 63, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+button.btn-delete {
+  background-color: rgba(175, 70, 70, .7);
+}
+button.btn-delete:hover {
+  background-color: rgba(175, 70, 70, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+button#chat-send {
+  margin: 20px 0 0 200px;
+}
+
+.page-heading {
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 100;
+}
+
+.welcomeh1 {
+  font-weight: 300;
+  letter-spacing: 5px;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.welcomeh2 {
+  font-family: 'Laila', serif;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.btn-container {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%
+}
+
+.page-body {
+  border: 1px solid #fff;
+  margin: 0 auto 40px;
+  max-width: 380px;
+  padding: 0 30px 40px;
+}
+
+.page-body label, 
+.page-body input {
+  display: block;
+  margin: 20px auto 0;
+  width: 92%;
+}
+
+.page-body input {
+  margin-top: 0;
+}
+
+#chat-display > div, 
+#displayNews > div {
+  border-bottom: 1px solid #fff;
+  margin: 0 0 30px;
+  padding-bottom: 30px;
+}
+
+#displayNews section p:last-child {
+  text-align: right;
+  font-weight: 100;
+  text-decoration: underline;
+  color: #e6851d;
+  transition: color 400ms ease;
+}
+
+h2 {
+  text-transform: uppercase;
+  letter-spacing: 0px;
+}
+
+#displayNews section p:last-child:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+#chat-display > div:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+textarea, input {
+  min-width: 160px;
+  min-height: 20px;
+  padding: 10px;
+}
+
+textarea {
+  border: none;
+  display: block;
+  font-family: 'Laila', serif;
+  margin: 0 auto;
+  resize: vertical;
+  width: 350px;
+}
+
+textarea#chat-edit-entry {
+  width: 310px;
+}
+
+input {
+  text-transform: uppercase;
+}
+
+#chat-display fieldset {
+  margin: 0 auto 10px;
+  width: 330px;
+  padding: 20px;
+}
+
+[id^=createUser] {
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.login-field {
+  display: block;
+  margin: 0 auto 10px;
+}
